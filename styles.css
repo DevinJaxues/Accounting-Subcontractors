@@ -14,7 +14,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Suisse Int'l", 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background: var(--pure-white);
   color: var(--rich-black);
   line-height: 2;
@@ -29,11 +29,13 @@ body {
 
 /* Header */
 .site-header {
-  background: var(--deep-green-black);
-  padding: 1rem 0;
-  position: sticky;
+  position: absolute;
   top: 0;
-  z-index: 10;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: transparent;
+  padding: 1.5rem 0;
 }
 
 .site-header .container {
@@ -43,22 +45,48 @@ body {
 }
 
 .site-logo {
-  height: 48px;
+  height: 42px;
 }
 
 .site-nav {
-  position: relative;
-}
-
-.nav-links {
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 4.5rem;
 }
 
 .site-nav a {
   color: var(--pure-white);
   text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.site-nav a::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--sage-green);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.site-nav a:hover {
+  color: var(--sage-green);
+}
+
+.nav-cta {
+  padding: 0.5rem 1rem;
+  background-color: var(--sage-green);
+  color: white;
+  border: none;
+  border-radius: 4px;
   font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .nav-toggle {
@@ -99,50 +127,61 @@ body {
     display: block;
   }
 
-  .nav-links {
+  .site-nav {
     display: none;
     flex-direction: column;
     position: absolute;
-    background: var(--deep-green-black);
     top: 100%;
     right: 0;
+    background: rgba(0, 0, 0, 0.9);
     padding: 1rem;
-    width: 200px;
+    border-radius: 8px;
   }
 
-  .nav-links.show {
+  .site-nav.show {
     display: flex;
   }
 }
 
-/* Hero / Section-Border */
+/* Full-Screen Hero with Two Side-by-Side Images */
 .section-border {
   position: relative;
-  text-align: center;
-  padding: 6rem 1rem;
+  height: 100vh;
+  overflow: hidden;
   background-color: var(--sage-green);
   color: var(--pure-white);
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .section-border-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(30, 30, 30, 0.4);
+  background: rgba(30, 30, 30, 0.45);
   z-index: 1;
 }
 
 .section-border .container {
   position: relative;
   z-index: 2;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.section-border .container h1,
+.section-border .container p {
+  font-size: 2.4rem;
+  line-height: 1.6;
 }
 
 .bg-image {
   position: absolute;
-  width: 50%;
-  height: 100%;
-  object-fit: cover;
   top: 0;
+  height: 100%;
+  width: 50%;
+  object-fit: cover;
   z-index: 0;
   opacity: 0.7;
 }
