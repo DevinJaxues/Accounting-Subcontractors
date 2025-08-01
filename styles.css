@@ -14,17 +14,21 @@
 }
 
 body {
-  font-family: "Suisse Int'l", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background: var(--pure-white);
   color: var(--rich-black);
   line-height: 2;
-  font-size: 1.1rem;
+  font-size: 2rem;
 }
 
 .container {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.container.grid-width {
   max-width: 1140px;
   margin: 0 auto;
-  padding: 0 1rem;
 }
 
 /* Header */
@@ -35,32 +39,36 @@ body {
   right: 0;
   z-index: 20;
   background: transparent;
-  padding: 1.5rem 0;
+  padding: 1.5rem 2rem;
 }
 
 .site-header .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  gap: 4rem;
 }
 
 .site-logo {
-  height: 42px;
+  height: 94px;
+  margin-left: 0;
 }
 
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 4.5rem;
+  gap: 100px;
 }
 
 .site-nav a {
   color: var(--pure-white);
   text-decoration: none;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   position: relative;
   padding-bottom: 6px;
+  display: inline-block;
+  margin-right: 3rem;
 }
 
 .site-nav a::after {
@@ -68,7 +76,7 @@ body {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: var(--sage-green);
+  background-color: var(--pure-white);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -143,13 +151,16 @@ body {
   }
 }
 
-/* Full-Screen Hero with Two Side-by-Side Images */
+/* Full-Screen Hero with Blueprint Background */
 .section-border {
   position: relative;
   height: 100vh;
   overflow: hidden;
-  background-color: var(--sage-green);
-  color: var(--pure-white);
+  background-color: var(--deep-green-black);
+  background-image: url('images/blueprint.png');
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -159,7 +170,7 @@ body {
 .section-border-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(30, 30, 30, 0.45);
+  background: rgba(36, 52, 47, 0.85);
   z-index: 1;
 }
 
@@ -170,28 +181,28 @@ body {
   padding: 0 1rem;
 }
 
-.section-border .container h1,
+.section-border .container h1 {
+  font-size: 5.4rem;
+  line-height: 1.4;
+  max-width: 900px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+    color: var(--pure-white);
+}
+
 .section-border .container p {
   font-size: 2.4rem;
-  line-height: 1.6;
-}
-
-.bg-image {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 50%;
-  object-fit: cover;
-  z-index: 0;
-  opacity: 0.7;
-}
-
-.bg-image.left {
-  left: 0;
-}
-
-.bg-image.right {
-  right: 0;
+  line-height: 1.4;
+  max-width: 700px;
+ display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+    color: var(--pure-white);
 }
 
 /* Services */
@@ -228,6 +239,7 @@ body {
   margin: 1rem 0 0.5rem;
   font-size: 1.4rem;
   color: var(--deep-green-black);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .service-box p {
@@ -236,18 +248,96 @@ body {
   line-height: 2;
   max-width: 600px;
   margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.pricing-button-wrapper {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.pricing-button {
+  background-color: var(--sage-green); /* uses your palette */
+  color: #fcfcfc;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.pricing-button:hover {
+  background-color: #2e6d4a;
 }
 
 /* About */
-.about {
-  padding: 4rem 1rem;
-  background: var(--pure-white);
+.about-section {
+  padding: 6rem 2rem;
+  background-color: #ffffff;
+}
+
+.about-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.about-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
   text-align: center;
+  z-index: 2;
+}
+
+.about-box blockquote {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  font-style: italic;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.about-box cite {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.about-button {
+  background-color: var(--sage-green);
+  color: #ffffff;
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.about-button:hover {
+  background-color: #2e6d4a;
 }
 
 /* Contact */
 .contact {
-  background: var(--sage-green);
+  background: var(--deep-green-black);
   color: var(--pure-white);
   padding: 4rem 1rem;
   text-align: center;
@@ -265,7 +355,7 @@ body {
 }
 
 .contact-form button {
-  background: var(--deep-green-black);
+  background: var(--sage-green);
   color: var(--pure-white);
   padding: 0.75rem 2rem;
   border: none;
@@ -275,14 +365,43 @@ body {
   font-weight: 600;
 }
 
-/* Footer */
-.site-footer {
-  background: var(--deep-green-black);
-  color: var(--pure-white);
-  text-align: center;
-  padding: 1rem;
+.contact-form button:hover {
+    background-color: #2e6d4a;
 }
 
-/* Scroll Animations */
-.fade-in { opacity: 0; }
-.fade-up { opacity: 0; transform: translateY(30px); }
+/* Footer */
+.site-footer {
+  background-color: #1e1e1e;
+  color: #fff;
+  padding: 3rem 2rem;
+  font-size: 1rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.footer-left p {
+  margin: 0.5rem 0;
+}
+
+.footer-right a {
+  color: #fff;
+  margin-left: 1.5rem;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+  color: var(--primary-green); /* update to your brand green */
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: none;
+}

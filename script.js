@@ -1,27 +1,22 @@
-// Scroll animations using GSAP
 window.addEventListener("DOMContentLoaded", () => {
-  gsap.utils.toArray(".fade-in").forEach((el) => {
-    gsap.to(el, {
-      opacity: 1,
-      duration: 1,
-      scrollTrigger: {
-        trigger: el,
-        start: "top 80%"
+  gsap.utils.toArray(".fade-in").forEach((el, i) => {
+    gsap.fromTo(
+      el,
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        delay: i * 0.1,
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true
+        }
       }
-    });
-  });
-
-  gsap.utils.toArray(".fade-up").forEach((el) => {
-    gsap.to(el, {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%"
-      }
-    });
+    );
   });
 
   // Mobile nav toggle
