@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing | Accounting Subcontractors</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+    .toggle-button {
+      padding: 0.5rem 1rem;
+      margin: 0 1rem;
+      border: 2px solid #5A775F;
+      background: white;
+      color: #5A775F;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .toggle-button.active {
+      background: #5A775F;
+      color: white;
+    }
+    .pricing-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .card ul li {
+      font-size: 0.85rem;
+      border-bottom: 1px solid #eee;
+      padding: 6px 0;
+    }
+    .card .best-value {
+      background: #5A775F;
+      color: white;
+      padding: 6px 10px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      border-radius: 4px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      text-transform: uppercase;
+    }
+    .card ul {
+      padding-left: 1rem;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .card .cta {
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body class="pricing-page">
+  <header class="site-header">
+    <div class="container">
+      <img src="images/acc_sub_Logo.png" alt="Logo" class="site-logo fade-in" />
+      <nav class="site-nav">
+        <div class="nav-links fade-in">
+          <a href="index.html">Home</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="about.html">About</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="fade-in">
+      <div class="container">
+        <h2 style="text-align:center">Service Comparison</h2>
+        <table class="comparison-table" style="width: 50%; margin: 0 auto;">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>DIY</th>
+              <th>Bookkeepers</th>
+              <th>Accounting Subcontractors</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Construction Expertise</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td></tr>
+            <tr><td>Real-time Dashboard</td><td class="cross">✘</td><td class="check">✔</td><td class="check">✔</td></tr>
+            <tr><td>Payroll Integration</td><td class="cross">✘</td><td class="check">✔</td><td class="check">✔</td></tr>
+            <tr><td>1099 Filings</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td></tr>
+            <tr><td>Cloud Document Access</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
+            <tr><td>CFO Advisory</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td></tr>
+            <tr><td>Dedicated Support</td><td class="cross">✘</td><td class="check">✔</td><td class="check">✔</td></tr>
+            <tr><td>Construction-Specific Reporting</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="pricing-toggle fade-in">
+      <button class="toggle-button active" data-mode="monthly">Monthly</button>
+      <button class="toggle-button" data-mode="yearly">Yearly</button>
+    </section>
+
+    <section class="cards fade-in" id="plans">
+      <!-- Bronze Plan -->
+      <div class="card" data-plan="bronze">
+        <h3>Bronze</h3>
+        <p class="price">$99</p>
+        <p class="billed">Billed monthly</p>
+        <ul>
+          <li>Bank reconciliation</li>
+          <li>Monthly reports</li>
+          <li>Client support</li>
+          <li>Dedicated dashboard</li>
+          <li>Limited invoicing</li>
+          <li>Basic payroll</li>
+          <li>Tax estimate</li>
+          <li>Support for 1 user</li>
+          <li>Cloud backups</li>
+          <li>Email summaries</li>
+        </ul>
+        <a href="contact.html" class="cta">Choose Bronze</a>
+      </div>
+
+      <!-- Silver Plan -->
+      <div class="card" data-plan="silver">
+        <h3>Silver</h3>
+        <p class="price">$199</p>
+        <p class="billed">Billed monthly</p>
+        <ul>
+          <li>Everything in Bronze</li>
+          <li>Advanced payroll</li>
+          <li>2 additional users</li>
+          <li>Dedicated specialist</li>
+          <li>Phone support</li>
+          <li>Job costing</li>
+          <li>Quarterly reviews</li>
+          <li>Integrations (QuickBooks, Gusto)</li>
+          <li>1099 Filings</li>
+          <li>Document storage</li>
+          <li>Weekly reports</li>
+          <li>Contractor portal</li>
+          <li>Expense management</li>
+          <li>Bank-level encryption</li>
+          <li>Mobile dashboard</li>
+        </ul>
+        <a href="contact.html" class="cta">Choose Silver</a>
+      </div>
+
+      <!-- Gold Plan -->
+      <div class="card featured" data-plan="gold">
+        <div class="best-value">Best Value</div>
+        <h3>Gold</h3>
+        <p class="price">$299</p>
+        <p class="billed">Billed monthly</p>
+        <ul>
+          <li>Everything in Silver</li>
+          <li>Unlimited users</li>
+          <li>CFO-level advisory</li>
+          <li>Real-time dashboards</li>
+          <li>Custom chart of accounts</li>
+          <li>Job scheduling integration</li>
+          <li>Dedicated tax specialist</li>
+          <li>Priority support</li>
+          <li>Multi-entity reporting</li>
+          <li>Advanced cash flow tools</li>
+          <li>Payroll automation</li>
+          <li>Forecast modeling</li>
+          <li>White-glove onboarding</li>
+          <li>Tax prep & filing</li>
+          <li>Budget planning</li>
+          <li>Invoicing automation</li>
+          <li>Receivables tracking</li>
+          <li>Bill pay included</li>
+          <li>Collaboration tools</li>
+          <li>Annual review</li>
+        </ul>
+        <a href="contact.html" class="cta">Choose Gold</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

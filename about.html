@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Accounting Subcontractors</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+    .about-hero {
+      background-color: black;
+      color: white;
+      padding: 100px 20px 60px;
+      text-align: center;
+      position: relative;
+    }
+
+    .about-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.8;
+    }
+
+    .team-bio-section {
+      position: relative;
+      padding: 100px 20px;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .team-bio-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1000px;
+      height: 100%;
+      background: url('images/about-background.jpg') no-repeat center center;
+      background-size: contain;
+      z-index: -2;
+    }
+
+    .team-bio-section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    .team-bio-card {
+      background: rgba(0, 0, 0, 0.7);
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .team-bio-card h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .team-bio-card p {
+      font-size: 1rem;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+
+    .team-section {
+      background: #f2f2f2;
+      padding: 60px 20px;
+    }
+
+    .team-section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .profile {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .profile img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .profile-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .profile-content h3 {
+      margin-bottom: 8px;
+      font-size: 1.4rem;
+    }
+
+    .profile-content p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .neon-divider {
+      height: 4px;
+      width: 400px;
+      margin: 30px auto;
+      background: linear-gradient(90deg, #2B5935, #9CB292);
+      border-radius: 2px;
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <img src="images/acc_sub_Logo.png" alt="Logo" class="site-logo fade-in" />
+      <nav class="site-nav">
+        <div class="nav-links fade-in">
+          <a href="index.html">Home</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="about-hero fade-in">
+    <h1>Meet the Team Behind the Numbers</h1>
+    <div class="neon-divider"></div>
+    <p>Accounting Subcontractors is built on the mission of delivering construction-focused financial clarity to small and medium-sized businesses. Our blend of deep industry experience and cutting-edge tech helps our clients grow smarter, not harder.</p>
+  </section>
+
+  <section class="about-section team-bio-section">
+  <div class="about-content fade-in">
+    <div class="about-image">
+      <img src="images/about-background.jpg" alt="Company History Image" />
+    </div>
+    <div class="about-box fade-in">
+      <blockquote>
+        <p>
+          Founded by a team of passionate accounting professionals, Accounting Subcontractors began with a mission: to bridge the gap between on-site construction expertise and behind-the-scenes financial clarity. Over the years, we've become a trusted partner for builders, contractors, and startups seeking precision, scalability, and peace of mind.
+        </p>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+  <section class="team-section fade-in">
+    <h2>Our People</h2>
+    <div class="team-grid">
+      <div class="profile">
+        <img src="images/brady.jpg" alt="Employee 1">
+        <div class="profile-content">
+          <h3>Brodie Martin</h3>
+          <p>Senior Advisor • Expert in Construction CFO Strategies</p>
+        </div>
+      </div>
+
+      <div class="profile">
+        <img src="images/brock.jpg" alt="Employee 2">
+        <div class="profile-content">
+          <h3>Brock Jones</h3>
+          <p>Tax Specialist • 1099 Filing & Contractor Tax Genius</p>
+        </div>
+      </div>
+
+      <div class="profile">
+        <img src="images/devin.jpg" alt="Employee 3">
+        <div class="profile-content">
+          <h3>Devin Monsen</h3>
+          <p>Client Success • Real-Time Financial Reporting Enthusiast</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
