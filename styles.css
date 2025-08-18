@@ -1,4 +1,6 @@
-/* ========== THEME TOKENS ========== */
+/* =========================
+   THEME TOKENS
+   ========================= */
 :root{
   --sage-green:#5a775f;
   --pure-white:#ffffff;
@@ -6,21 +8,27 @@
   --deep-green-black:#24342f;
 }
 
-/* ========== RESET / BASE ========== */
+/* =========================
+   RESET / BASE
+   ========================= */
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
+html,body{overflow-x:hidden}
 body{
   font-family:'Montserrat',sans-serif;
   color:var(--rich-black);
   background:var(--pure-white);
   line-height:1.65;
-  padding-top:var(--header-offset,72px); /* keeps content below sticky header */
+  /* Default push for fixed header; overridden on some pages below */
+  padding-top:var(--header-offset,72px);
 }
 img{max-width:100%;display:block}
 .container{width:100%;padding:0 1rem}
 .container.grid-width{max-width:1140px;margin:0 auto}
 
-/* ========== STICKY HEADER (shared across all pages) ========== */
+/* =========================
+   STICKY / GLASSY HEADER (shared)
+   ========================= */
 .site-header{
   position:fixed;top:0;left:0;right:0;z-index:1002;
   background:rgba(0,0,0,.35);
@@ -33,15 +41,17 @@ img{max-width:100%;display:block}
   backdrop-filter:blur(6px);
   box-shadow:0 4px 12px rgba(0,0,0,.12);
 }
-
-html, body {
-  overflow-x: hidden;
+.site-header .container{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem
 }
+.site-logo{height:72px;display:block;width:auto;object-fit:contain}
 
-.site-header .container{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.site-logo{height:72px}
+/* Prevent header fades from hiding content */
+.site-header .fade-in{opacity:1 !important;transform:none !important}
 
-/* ========== NAV ========== */
+/* =========================
+   NAVIGATION
+   ========================= */
 .site-nav{display:flex;align-items:center;gap:1rem}
 .nav-links a{
   color:#fff;text-decoration:none;font-weight:600;font-size:1rem;position:relative;
@@ -54,9 +64,10 @@ html, body {
   padding:.55rem .9rem;border-radius:8px;font-weight:700;text-decoration:none;
   transition:background .25s ease,transform .05s ease
 }
+.client-portal-btn:hover{background:#2e6d4a}
+.client-portal-btn:active{transform:translateY(1px)}
 
-
-/* ========== HAMBURGER + DRAWER (mobile) ========== */
+/* Hamburger + Drawer (mobile) */
 .nav-toggle{
   display:none;background:transparent;border:0;width:42px;height:42px;position:relative;cursor:pointer;z-index:1003;
 }
@@ -83,25 +94,35 @@ body.nav-open .nav-toggle .hamburger::after{transform:translateY(-14px) rotate(-
   .nav-links.show{transform:translateX(0)}
   body.nav-open{overflow:hidden}
   .nav-links a{margin-right:0}
-  .nav-links .client-portal-btn{display:block;width:100%;text-align:left;padding:.7rem 1rem;margin:0;border-radius:8px}
+  .nav-links .client-portal-btn{
+    display:block;width:100%;text-align:left;padding:.7rem 1rem;margin:0;border-radius:8px
+  }
 }
 
-/* ========== HOME: HERO (“section-border”) ========== */
+/* =========================
+   HERO (“section-border”) — Home
+   ========================= */
 .section-border{
   position:relative;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
   background-color:var(--deep-green-black);
-  background-image:url('images/blueprint.png');background-repeat:no-repeat;background-size:auto 100%;background-position:center;
+  background-image:url('images/blueprint.webp');
+  background-repeat:no-repeat;background-size:cover;background-position:center;
 }
 .section-border-overlay{position:absolute;inset:0;background:rgba(36,52,47,.85);z-index:1}
 .section-border .container{position:relative;z-index:2}
 .section-border .container h1{
-  color:#fff;font-size:clamp(1.8rem,6vw,5.4rem);line-height:1.24;max-width:900px;margin:0 auto
+  color:#fff;font-size:clamp(1.8rem,6vw,5.2rem);line-height:1.24;max-width:900px;margin:0 auto
 }
 .section-border .container p{
-  color:#fff;font-size:clamp(1rem,3.8vw,2rem);line-height:1.4;max-width:700px;margin:.5rem auto 0
+  color:#fff;font-size:clamp(1rem,3.6vw,1.9rem);line-height:1.4;max-width:700px;margin:.6rem auto 0
 }
 
-/* ========== SERVICES (home) ========== */
+/* Pull hero under fixed header (no white band on home) */
+body > .section-border{margin-top:calc(var(--header-offset,72px) * -1)}
+
+/* =========================
+   SERVICES (home)
+   ========================= */
 .services{background:#f7f7f7;padding:5rem 1rem;text-align:center}
 .services h2{font-size:2rem;margin-bottom:3rem}
 .service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:3rem}
@@ -116,7 +137,9 @@ body.nav-open .nav-toggle .hamburger::after{transform:translateY(-14px) rotate(-
 }
 .pricing-button:hover{background:#2e6d4a}
 
-/* ========== ABOUT (home & about page share classes) ========== */
+/* =========================
+   ABOUT (home & about page share)
+   ========================= */
 .about-section{padding:6rem 2rem;background:#fff}
 .about-content{max-width:1100px;margin:0 auto;position:relative}
 .about-image img{width:100%;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.15)}
@@ -132,7 +155,6 @@ body.nav-open .nav-toggle .hamburger::after{transform:translateY(-14px) rotate(-
 }
 .about-button:hover{background:#2e6d4a}
 
-/* Mobile: let the about card stack (prevents overlap into next section) */
 @media (max-width:768px){
   .about-section{padding:3rem 1rem}
   .about-box{position:static;transform:none;max-width:100%;margin:1rem auto 0;padding:1rem 1.1rem}
@@ -140,217 +162,28 @@ body.nav-open .nav-toggle .hamburger::after{transform:translateY(-14px) rotate(-
   .about-box cite{font-size:.9rem;margin-bottom:1rem}
 }
 
-/* ========== CONTACT (home) ========== */
+/* Let header overlay first section on About/Contact (like Home) */
+body.about-page, body.contact-page{padding-top:0 !important}
+.about-hero, .contact-hero{padding-top:110px}
+
+/* =========================
+   CONTACT (home)
+   ========================= */
 .contact{background:var(--deep-green-black);color:#fff;padding:4rem 1rem;text-align:center}
+.contact-form{
+  display:flex;flex-direction:column;align-items:center;gap:12px
+}
 .contact-form input,.contact-form textarea{
-  width:100%;max-width:500px;margin:1rem auto;padding:.75rem;border:none;border-radius:6px
+  width:100%;max-width:500px;margin:0;padding:.75rem;border:none;border-radius:6px
 }
 .contact-form button{
   background:var(--sage-green);color:#fff;padding:.9rem 2rem;border:none;border-radius:6px;cursor:pointer;font-weight:700
 }
 .contact-form button:hover{background:#2e6d4a}
 
-/* ========== FOOTER ========== */
-.site-footer{background:#1e1e1e;color:#fff;padding:3rem 2rem;font-size:1rem}
-.footer-content{display:flex;justify-content:space-between;flex-wrap:wrap;max-width:1140px;margin:0 auto}
-.footer-right a{color:#fff;margin-left:1.2rem;font-size:1.4rem;transition:opacity .25s ease}
-.footer-right a:hover{opacity:.8}
-
-/* ========== PRICING PAGE EXTRAS ========== */
-.table-wrapper{overflow-x:auto;margin-top:2rem}
-.comparison-table{width:50%;margin:0 auto;border-collapse:collapse;font-size:1rem}
-.comparison-table th,.comparison-table td{border:1px solid #ddd;padding:1rem;text-align:center}
-.comparison-table th{background:var(--deep-green-black);color:#fff}
-.comparison-table tr:nth-child(even){background:#f2f2f2}
-
-.cards{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;margin:3rem 0}
-.card{
-  background:#fff;border:2px solid var(--sage-green);border-radius:8px;max-width:320px;padding:2rem;text-align:center;
-  box-shadow:0 4px 12px rgba(0,0,0,.1);display:flex;flex-direction:column;position:relative
-}
-.card.featured{border-color:var(--deep-green-black);box-shadow:0 6px 16px rgba(0,0,0,.15)}
-.card h3{font-size:1.4rem;color:var(--deep-green-black);margin-bottom:.25rem}
-.card .price{font-size:2rem;font-weight:700;color:var(--sage-green);margin:.75rem 0}
-.card .billed{font-size:.95rem;color:#555}
-.card ul{list-style:none;padding:0;margin:1rem 0 1.5rem}
-.card ul li{font-size:.9rem;border-bottom:1px solid #eee;padding:.45rem 0;color:#444}
-.card .best-value{
-  background:var(--sage-green);color:#fff;padding:6px 10px;font-size:.75rem;font-weight:800;border-radius:4px;
-  position:absolute;top:10px;left:10px;text-transform:uppercase;box-shadow:0 2px 8px rgba(0,0,0,.2)
-}
-.card .cta{
-  margin-top:auto;display:inline-block;background:var(--sage-green);color:#fff;font-weight:700;
-  padding:.75rem 1.5rem;border-radius:6px;text-decoration:none;transition:background .25s ease
-}
-.card .cta:hover{background:#2e6d4a}
-
-/* ========== ANIMATIONS HOOK ========== */
-.fade-in{opacity:0;transform:translateY(30px)}
-
-/* ===== Pricing: responsive comparison table + mobile cards (safe fallback) ===== */
-html, body { overflow-x: hidden; }
-
-.table-wrapper{
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  margin: 2rem auto 0;
-  padding: 0 1rem;
-}
-
-.comparison-table{
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  border-collapse: collapse;
-  table-layout: fixed;
-  font-size: 1rem;
-}
-.comparison-table th,
-.comparison-table td{
-  border: 1px solid #ddd;
-  padding: 1rem;
-  word-wrap: break-word;
-  overflow-wrap: anywhere;
-}
-.comparison-table th{
-  background: var(--deep-green-black);
-  color: #fff;
-}
-.comparison-table tr:nth-child(even){ background: #f8f8f8; }
-.comparison-table td:first-child{
-  text-align: left;
-  font-weight: 600;
-  color: #222;
-}
-
-/* Desktop nicety: sticky first column if user scrolls horizontally */
-@media (min-width: 900px){
-  .comparison-table td:first-child, .comparison-table th:first-child{
-    position: sticky; left: 0; background: inherit; z-index: 1;
-  }
-}
-
-/* Mobile: show cards IF (and only if) JS built them */
-.comparison-cards { display: none; }
-@media (max-width: 900px){
-  body.has-comparison-cards .comparison-table { display: none; }
-  body.has-comparison-cards .comparison-cards { 
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 0 1rem;
-    max-width: 700px;
-    margin: 1.25rem auto 0;
-  }
-  .plan-card{
-    background:#fff; border:1.5px solid #e6e6e6; border-radius:12px;
-    box-shadow:0 6px 16px rgba(0,0,0,.06); overflow:hidden;
-  }
-  .plan-card__header{
-    background:var(--deep-green-black); color:#fff;
-    padding:1rem 1.1rem; display:flex; align-items:center; justify-content:space-between;
-  }
-  .plan-card__title{ font-weight:800; font-size:1.05rem; letter-spacing:.2px; }
-  .plan-card__body{ padding:.5rem 1.1rem 1rem; }
-  .plan-card__row{
-    display:flex; align-items:center; gap:.75rem;
-    padding:.65rem 0; border-bottom:1px solid #eee;
-  }
-  .plan-card__row:last-child{ border-bottom:0; }
-  .feat-name{ flex:1; font-size:.97rem; color:#222; }
-  .badge{
-    display:inline-block; min-width:26px; height:26px; border-radius:50%;
-    text-align:center; line-height:26px; font-weight:800; font-size:.9rem;
-  }
-  .badge--yes{ background:#e6f3ea; color:#2f6a43; }
-  .badge--no{ background:#f4f4f4; color:#888; }
-}
-
-/* Optional: sticky first column on horizontal scroll */
-@media (min-width: 900px){
-  .table-wrapper { overflow-x:auto; }
-  .comparison-table td:first-child, .comparison-table th:first-child{
-    position:sticky; left:0; background:inherit; z-index:1;
-  }
-}
-
-/* ===== Mobile: replace table with stacked cards ===== */
-@media (max-width: 900px){
-  .table-wrapper { padding:0; }
-  .comparison-cards {                        /* the auto-generated mobile layout */
-    display:grid;
-    grid-template-columns:1fr;
-    gap:1rem;
-    padding:0 1rem;
-    max-width:700px;
-    margin:1.25rem auto 0;
-  }
-  .plan-card{
-    background:#fff;
-    border:1.5px solid #e6e6e6;
-    border-radius:12px;
-    box-shadow:0 6px 16px rgba(0,0,0,.06);
-    overflow:hidden;
-  }
-  .plan-card__header{
-    background:var(--deep-green-black);
-    color:#fff;
-    padding:1rem 1.1rem;
-    display:flex; align-items:center; justify-content:space-between;
-  }
-  .plan-card__title{ font-weight:800; font-size:1.05rem; letter-spacing:.2px; }
-  .plan-card__body{ padding:.5rem 1.1rem 1rem; }
-  .plan-card__row{
-    display:flex; align-items:center; gap:.75rem;
-    padding:.65rem 0;
-    border-bottom:1px solid #eee;
-  }
-  .plan-card__row:last-child{ border-bottom:0; }
-  .feat-name{ flex:1; font-size:.97rem; color:#222; }
-  .badge{
-    display:inline-block; min-width:26px; height:26px;
-    border-radius:50%; text-align:center; line-height:26px;
-    font-weight:800; font-size:.9rem;
-  }
-  .badge--yes{ background:#e6f3ea; color:#2f6a43; }
-  .badge--no{ background:#f4f4f4; color:#888; }
-}
-
-/* Home hero should sit flush under the fixed header (no white band) */
-body > .section-border {
-  margin-top: calc(var(--header-offset, 72px) * -1);
-}
-
-/* Contact form: stacked fields with clean spacing */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;        /* keep fields centered under the heading */
-  gap: 12px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  display: block;             /* ensure each field starts on a new line */
-  width: 100%;
-  max-width: 500px;           /* matches your previous design */
-  margin: 0;                  /* gap handles spacing now */
-}
-
-.about-section img,
-.about-section .team-photo,
-.about-section .content {
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.our-people {
-  flex-wrap: wrap;
-}
-
-/* ===== Contact page polish ===== */
+/* =========================
+   CONTACT PAGE EXTRAS
+   ========================= */
 .contact-hero--brand{
   background: radial-gradient(1200px 600px at 10% -10%, rgba(90,119,95,.55), rgba(36,52,47,.92)),
               linear-gradient(180deg, rgba(36,52,47,.85), rgba(36,52,47,.85));
@@ -358,11 +191,16 @@ body > .section-border {
 }
 .contact-hero--brand h1{ font-size:2.4rem; margin-bottom:.35rem; }
 .contact-hero--brand p{ font-size:1.05rem; opacity:.95; max-width:820px; margin:0 auto 1rem; }
-.btn-outline{
-  display:inline-block; background:transparent; color:#fff; border:2px solid #fff;
-  padding:.9rem 1.4rem; border-radius:10px; font-weight:700; text-decoration:none; transition:opacity .25s ease
+.btn-primary{
+  display:inline-block;background:var(--sage-green);color:#fff;border:2px solid var(--sage-green);
+  padding:.9rem 1.4rem;border-radius:10px;font-weight:700;text-decoration:none;transition:background .25s ease
 }
-.btn-outline:hover{ opacity:.85; }
+.btn-primary:hover{background:#2e6d4a}
+.btn-outline{
+  display:inline-block;background:transparent;color:#fff;border:2px solid #fff;
+  padding:.9rem 1.4rem;border-radius:10px;font-weight:700;text-decoration:none;transition:opacity .25s ease
+}
+.btn-outline:hover{opacity:.85}
 
 .contact-info{ background:#f7f9f8; padding:2.2rem 1rem; }
 .info-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; }
@@ -378,27 +216,20 @@ body > .section-border {
 
 .contact-panels{ background:#fff; padding:2.5rem 1rem 4rem; }
 .contact-panels-grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:1.25rem; align-items:start; }
-@media (max-width: 900px){
-  .contact-panels-grid{ grid-template-columns:1fr; }
-}
-
+@media (max-width: 900px){ .contact-panels-grid{ grid-template-columns:1fr; } }
 .map-card .map-card__inner{
   background:#fff; border:2px solid var(--sage-green); border-radius:12px; overflow:hidden;
   box-shadow:0 6px 16px rgba(0,0,0,.08);
 }
-
-/* Card-styled form */
 .form-card{
   background:#fff; border:2px solid var(--sage-green); border-radius:12px; padding:1.25rem 1.25rem 1.5rem;
   box-shadow:0 6px 16px rgba(0,0,0,.08);
 }
 .form-card h2{ margin:0 0 .25rem 0; }
 .form-card .form-sub{ color:#555; margin-bottom:1rem; }
-
 .contact-form--card{ gap:14px; align-items:center; }
 .contact-form--card .form-row{ width:100%; max-width:560px; }
 .btn-block{ display:block; width:100%; max-width:560px; }
-
 .contact-form label{ display:block; font-weight:600; margin-bottom:.35rem; color:#1e1e1e; }
 .contact-form input, .contact-form textarea{
   width:100%; padding:.9rem 1rem; border-radius:8px; border:1.5px solid #d9d9d9; font-size:1rem; outline:none; background:#fff;
@@ -409,6 +240,269 @@ body > .section-border {
   box-shadow: 0 0 0 3px rgba(90,119,95,.15);
 }
 
-/* Make inline links/buttons match brand */
-.contact-options a, .reminder-card a { text-decoration:none; }
+/* =========================
+   FOOTER
+   ========================= */
+.site-footer{background:#1e1e1e;color:#fff;padding:3rem 2rem;font-size:1rem}
+.footer-content{display:flex;justify-content:space-between;flex-wrap:wrap;max-width:1140px;margin:0 auto}
+.footer-right a{color:#fff;margin-left:1.2rem;font-size:1.4rem;transition:opacity .25s ease}
+.footer-right a:hover{opacity:.8}
 
+/* =========================
+   COMPARISON TABLE (desktop/tablet)
+   ========================= */
+.table-wrapper{width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem auto 0;padding:0 1rem}
+.comparison-table{
+  width:100%;max-width:1000px;margin:0 auto;border-collapse:collapse;table-layout:fixed;font-size:1rem
+}
+.comparison-table th,.comparison-table td{
+  border:1px solid #ddd;padding:1rem;word-wrap:break-word;overflow-wrap:anywhere
+}
+.comparison-table th{background:var(--deep-green-black);color:#fff}
+.comparison-table tr:nth-child(even){background:#f8f8f8}
+.comparison-table td:first-child{text-align:left;font-weight:600;color:#222}
+@media (min-width:900px){
+  .comparison-table td:first-child,.comparison-table th:first-child{
+    position:sticky;left:0;background:inherit;z-index:1;
+  }
+}
+
+/* =========================
+   MOBILE COMPARISON CARDS (built by JS) — safe fallback
+   Only hide the table if cards actually exist.
+   ========================= */
+.comparison-cards{display:none}
+@media (max-width:900px){
+  body.has-comparison-cards .comparison-table{display:none}
+  body.has-comparison-cards .comparison-cards{
+    display:grid;grid-template-columns:1fr;gap:1rem;padding:0 1rem;max-width:700px;margin:1.25rem auto 0
+  }
+  .comparison-cards .plan-card{
+    background:#fff;border:1.5px solid #e6e6e6;border-radius:12px;
+    box-shadow:0 6px 16px rgba(0,0,0,.06);overflow:hidden
+  }
+  .comparison-cards .plan-card__header{
+    background:var(--deep-green-black);color:#fff;padding:1rem 1.1rem;display:flex;align-items:center;justify-content:space-between
+  }
+  .comparison-cards .plan-card__title{font-weight:800;font-size:1.05rem;letter-spacing:.2px}
+  .comparison-cards .plan-card__body{padding:.5rem 1.1rem 1rem}
+  .comparison-cards .plan-card__row{
+    display:flex;align-items:center;gap:.75rem;padding:.65rem 0;border-bottom:1px solid #eee
+  }
+  .comparison-cards .plan-card__row:last-child{border-bottom:0}
+  .comparison-cards .feat-name{flex:1;font-size:.97rem;color:#222}
+  .comparison-cards .badge{
+    display:inline-block;min-width:26px;height:26px;border-radius:50%;
+    text-align:center;line-height:26px;font-weight:800;font-size:.9rem
+  }
+  .comparison-cards .badge--yes{background:#e6f3ea;color:#2f6a43}
+  .comparison-cards .badge--no{background:#f4f4f4;color:#888}
+}
+
+/* =========================
+   PRICING CARDS — new layout
+   ========================= */
+.pricing-plans{padding:2.5rem 1rem 4rem;background:#fff}
+.plans-header{text-align:center;max-width:800px;margin:0 auto 1.25rem}
+.plans-header h2{font-size:3rem;margin-bottom:.25rem;color:var(--deep-green-black)}
+.plans-header p{color:#4a4a4a}
+
+.plan-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.25rem;align-items:stretch
+}
+
+/* Prevent blowouts & reserve space for ribbon */
+.plan-card,.plan-card *{min-width:0}
+.plan-card{
+  position:relative;display:flex;flex-direction:column;
+  background:#fff;border:2px solid #e9efe9;border-radius:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+  padding:1.25rem 1.25rem 1.4rem;
+  transition:transform .12s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.plan-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.10);border-color:#dce9e0}
+.plan-card.featured{border-color:var(--sage-green);box-shadow:0 12px 28px rgba(0,0,0,.12)}
+.plan-card__ribbon{
+  position:absolute;top:10px;right:10px;z-index:2;
+  background:var(--sage-green);color:#fff;font-weight:800;font-size:.75rem;
+  padding:5px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:.2px
+}
+.plan-card__head{margin-bottom:.5rem;padding-right:96px} /* space for ribbon */
+.plan-title{margin:0;color:var(--deep-green-black);font-size:1.0rem;overflow-wrap:anywhere}
+.plan-tagline{margin:.25rem 0 0;color:#4a4a4a;font-size:.95rem;overflow-wrap:anywhere}
+
+.plan-card__price-row{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:.75rem;margin:.5rem 0 1rem
+}
+.price-main{display:flex;align-items:baseline;gap:.35rem}
+.price-prefix{color:#5c6c66;font-weight:700;font-size:.95rem}
+.price-amount{color:var(--sage-green);font-weight:800;font-size:1.85rem;letter-spacing:.3px}
+.price-suffix{color:#5c6c66;font-size:.95rem;font-weight:600}
+.price-addon{text-align:right}
+.price-addon .addon-amount{display:block;font-weight:800;font-size:1rem;color:#2b4b3e}
+.price-addon .addon-note{display:block;font-size:.8rem;color:#556862;opacity:.9;margin-top:2px}
+
+.plan-features{list-style:none;padding:0;margin:0 0 1.1rem}
+.plan-features li{padding:.5rem 0;border-bottom:1px solid #eee;color:#333;font-size:.95rem}
+.plan-features li:last-child{border-bottom:none}
+
+.cta{
+  display:inline-block;align-self:flex-start;background:#e6f3ea;color:#2f6a43;font-weight:800;text-decoration:none;
+  padding:.7rem 1.1rem;border-radius:10px;border:2px solid #cfe7d7;
+  transition:background .2s ease,border-color .2s ease,transform .05s ease
+}
+.cta:hover{background:#dbefe2;border-color:#c4e0cf}
+.cta:active{transform:translateY(1px)}
+.cta--primary{background:var(--sage-green);color:#fff;border-color:var(--sage-green)}
+.cta--primary:hover{background:#2e6d4a;border-color:#2e6d4a}
+.small-note{color:#6b6b6b;font-size:.85rem;margin:.65rem 0 0}
+
+@media (max-width:900px){
+  .plan-card__price-row{flex-wrap:wrap}
+  .price-addon{text-align:left}
+}
+
+/* =========================
+   ANIMATION HOOK
+   ========================= */
+.fade-in{opacity:0;transform:translateY(30px)}
+
+/* Mobile: move the ribbon above the title so it never overlaps */
+@media (max-width: 520px){
+  .plan-card__ribbon{
+    position: static;           /* no absolute overlap */
+    display: inline-block;
+    margin-bottom: .5rem;
+  }
+  .plan-card__head{
+    padding-right: 0;           /* was 96px to reserve ribbon space */
+  }
+}
+
+/* Make each card a bit wider before wrapping to next column */
+.plan-grid{
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));  /* was 260px */
+}
+
+/* Let pricing line wrap cleanly on all viewports */
+.plan-card__price-row{
+  flex-wrap: wrap;                /* allow line break when tight */
+  row-gap: .35rem;                /* small vertical gap when it wraps */
+}
+
+/* Keep “Starting at $X /mo” as one unit and avoid squish */
+.price-main{
+  flex: 1 1 auto;
+  min-width: 240px;               /* room for the phrase + number */
+  white-space: nowrap;            /* keeps it on one line */
+}
+.price-amount{ line-height: 1; }  /* avoid tall-number collisions */
+
+/* Keep the add-on price flush right (or below on wrap) */
+.price-addon{
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+/* ===== Pricing cards: force 4-in-a-row on desktop, wrap gracefully below ===== */
+
+/* Default: fluid grid (phones/tablets) */
+.plan-grid{
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));  /* back to 260px so items don't get forced down */
+  gap: 1.1rem;                                                  /* a touch tighter to make room */
+}
+
+/* Desktop: always 4 across */
+@media (min-width: 1100px){
+  .plan-grid{
+    grid-template-columns: repeat(4, 1fr);  /* hard 4 columns */
+    gap: 1.25rem;                            /* normal spacing again */
+  }
+}
+
+/* Keep the overlap fixes you liked */
+.plan-card__price-row{
+  flex-wrap: wrap;         /* allows the add-on price to drop if tight */
+  row-gap: .35rem;
+}
+.price-main{
+  flex: 1 1 auto;
+  min-width: 240px;        /* enough room for 'Starting at $X /mo' */
+  white-space: nowrap;     /* keeps it on a single line */
+}
+.price-addon{
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+/* Mobile: keep ribbon above the title so it never overlaps */
+@media (max-width: 520px){
+  .plan-card__ribbon{ position: static; display:inline-block; margin-bottom:.5rem; }
+  .plan-card__head{ padding-right: 0; }
+}
+
+/* === PRICING: keep "Most Comprehensive" ribbon from overlapping title (desktop only) === */
+/* 1) Make sure the header can host absolutely-positioned children */
+.plan-card .plan-card__head { position: relative; }
+
+/* 2) Keep the ribbon absolute in the top-right corner of the CARD (as you have it)
+      but don't let it sit on top of the title — push content down a bit ONLY on featured cards */
+@media (min-width: 992px){
+  /* Undo any grid/flow experiments and go back to normal block flow for the header */
+  .plan-card.featured .plan-card__head { 
+    display: block;                 /* ensures simple flow */
+    padding-right: 0;               /* we won't fake space on the right */
+    padding-top: 2.1rem;            /* <-- this is the key: vertical clearance for the ribbon */
+    min-height: 0; 
+  }
+
+  /* Keep your ribbon where it lives visually, top-right, but as a pure overlay */
+  .plan-card.featured .plan-card__ribbon{
+    position: absolute !important;  /* overlay, no flow impact */
+    top: 10px; 
+    right: 12px;
+    z-index: 2;
+    pointer-events: none;           /* never interferes with clicks/selection */
+    margin: 0;                      /* normalize margins if any were applied earlier */
+  }
+
+  /* Tighten line-height a touch so the header block doesn't balloon */
+  .plan-card.featured .plan-title   { line-height: 1.25; }
+  .plan-card.featured .plan-tagline { line-height: 1.35; }
+}
+
+/* Keep the mobile behavior you liked: ribbon becomes a pill above the title */
+@media (max-width: 520px){
+  .plan-card__ribbon{
+    position: static !important;
+    display: inline-block;
+    margin-bottom: .5rem;
+  }
+  .plan-card__head{ padding-top: 0 !important; } /* no vertical clearance needed on mobile */
+}
+
+/* === Pricing Card Layout Fix: Align "Get Proposal" buttons === */
+.plan-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* ensures content stretches full height */
+}
+
+.plan-card__body {
+  flex-grow: 1; /* take up all extra space so the button is pushed down */
+  display: flex;
+  flex-direction: column;
+}
+
+.plan-card__features {
+  flex-grow: 1; /* features list expands to fill available space */
+  margin-bottom: 1rem;
+}
+
+.plan-card .btn-proposal {
+  margin-top: auto; /* push button to bottom of card */
+  align-self: center; /* center horizontally */
+  width: 80%; /* optional: make consistent size */
+  text-align: center;
+}

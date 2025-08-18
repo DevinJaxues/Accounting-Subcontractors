@@ -11,59 +11,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script defer src="script.js"></script>
-  <style>
-    .toggle-button {
-      padding: 0.5rem 1rem;
-      margin: 0 1rem;
-      border: 2px solid #5A775F;
-      background: white;
-      color: #5A775F;
-      font-weight: bold;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .toggle-button.active {
-      background: #5A775F;
-      color: white;
-    }
-    .pricing-toggle {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 2rem 0;
-    }
-    .card ul li {
-      font-size: 0.85rem;
-      border-bottom: 1px solid #eee;
-      padding: 6px 0;
-    }
-    .card .best-value {
-      background: #5A775F;
-      color: white;
-      padding: 6px 10px;
-      font-size: 0.75rem;
-      font-weight: bold;
-      border-radius: 4px;
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      text-transform: uppercase;
-    }
-    .card ul {
-      padding-left: 1rem;
-    }
-    .card {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-    }
-    .card .cta {
-      margin-top: auto;
-    }
-  </style>
 </head>
 <body class="pricing-page">
   <header class="site-header">
@@ -120,83 +67,138 @@
 
  
 
-    <section class="cards fade-in" id="plans">
-      <!-- Bronze Plan -->
-      <div class="card" data-plan="bronze">
-        <h3>Bronze</h3>
-        <p class="price">$99</p>
-        <p class="billed">Billed monthly</p>
-        <ul>
-          <li>Bank reconciliation</li>
-          <li>Monthly reports</li>
-          <li>Client support</li>
-          <li>Dedicated dashboard</li>
-          <li>Limited invoicing</li>
-          <li>Basic payroll</li>
-          <li>Tax estimate</li>
-          <li>Support for 1 user</li>
-          <li>Cloud backups</li>
-          <li>Email summaries</li>
-        </ul>
-        <a href="index.html#contact" class="cta">Choose Bronze</a>
-      </div>
+    <!-- ====== PLAN CARDS (anchored, friendly pricing) ====== -->
+  <section class="pricing-plans fade-in">
+  <div class="container grid-width">
+    <div class="plans-header">
+      <h2>Choose a plan that grows with you</h2>
+      <p>Transparent, construction-ready accounting. Prices shown are starting points; we right-size after a brief kickoff.</p>
+    </div>
 
-      <!-- Silver Plan -->
-      <div class="card" data-plan="silver">
-        <h3>Silver</h3>
-        <p class="price">$199</p>
-        <p class="billed">Billed monthly</p>
-        <ul>
-          <li>Everything in Bronze</li>
-          <li>Advanced payroll</li>
-          <li>2 additional users</li>
-          <li>Dedicated specialist</li>
-          <li>Phone support</li>
-          <li>Job costing</li>
-          <li>Quarterly reviews</li>
-          <li>Integrations (QuickBooks, Gusto)</li>
-          <li>1099 Filings</li>
-          <li>Document storage</li>
-          <li>Weekly reports</li>
-          <li>Contractor portal</li>
-          <li>Expense management</li>
-          <li>Bank-level encryption</li>
-          <li>Mobile dashboard</li>
-        </ul>
-        <a href="index.html#contact" class="cta">Choose Silver</a>
-      </div>
+    <div class="plan-grid">
+      <!-- CFO+ -->
+      <article class="plan-card featured" data-plan="cfo-plus">
+        <div class="plan-card__ribbon">Most Comprehensive</div>
+        <header class="plan-card__head">
+          <h3 class="plan-title">CFO+ Package</h3>
+          <p class="plan-tagline">Everything in Controller + CFO, plus advanced planning</p>
+        </header>
 
-      <!-- Gold Plan -->
-      <div class="card featured" data-plan="gold">
-        <div class="best-value">Best Value</div>
-        <h3>Gold</h3>
-        <p class="price">$299</p>
-        <p class="billed">Billed monthly</p>
-        <ul>
-          <li>Everything in Silver</li>
-          <li>Unlimited users</li>
-          <li>CFO-level advisory</li>
-          <li>Real-time dashboards</li>
-          <li>Custom chart of accounts</li>
-          <li>Job scheduling integration</li>
-          <li>Dedicated tax specialist</li>
-          <li>Priority support</li>
-          <li>Multi-entity reporting</li>
-          <li>Advanced cash flow tools</li>
-          <li>Payroll automation</li>
-          <li>Forecast modeling</li>
-          <li>White-glove onboarding</li>
-          <li>Tax prep & filing</li>
-          <li>Budget planning</li>
-          <li>Invoicing automation</li>
-          <li>Receivables tracking</li>
-          <li>Bill pay included</li>
-          <li>Collaboration tools</li>
-          <li>Annual review</li>
+        <div class="plan-card__price-row">
+          <div class="price-main">
+            <span class="price-prefix">Starting at</span>
+            <span class="price-amount" data-base="3500">$3,500</span>
+            <span class="price-suffix">/mo</span>
+          </div>
+          <div class="price-addon">
+            <span class="addon-amount" data-addon-total="3750">$3,750</span>
+            <span class="addon-note">with business + personal return</span>
+          </div>
+        </div>
+
+        <ul class="plan-features">
+          <li>Cash flow projections & KPI dashboard</li>
+          <li>Monthly WIP reporting & review</li>
+          <li>Controller oversight + CFO strategy</li>
+          <li>Monthly meeting cadence</li>
         </ul>
-        <a href="index.html#contact" class="cta">Choose Gold</a>
-      </div>
-    </section>
+
+        <a href="contact.html" class="cta cta--primary">Get CFO+ Proposal</a>
+        <p class="small-note">Final pricing depends on toolchain & job volume.</p>
+      </article>
+
+      <!-- CFO -->
+      <article class="plan-card" data-plan="cfo">
+        <header class="plan-card__head">
+          <h3 class="plan-title">CFO Package</h3>
+          <p class="plan-tagline">Modeling, analysis, and financial leadership</p>
+        </header>
+
+        <div class="plan-card__price-row">
+          <div class="price-main">
+            <span class="price-prefix">Starting at</span>
+            <span class="price-amount" data-base="2500">$2,500</span>
+            <span class="price-suffix">/mo</span>
+          </div>
+          <div class="price-addon">
+            <span class="addon-amount" data-addon-total="2750">$2,750</span>
+            <span class="addon-note">with business + personal return</span>
+          </div>
+        </div>
+
+        <ul class="plan-features">
+          <li>12-week cash flow projection</li>
+          <li>Cash flow & P&L analysis</li>
+          <li>Monthly KPI & WIP reporting</li>
+          <li>Monthly leadership sync</li>
+        </ul>
+
+        <a href="contact.html" class="cta">Get CFO Proposal</a>
+        <p class="small-note">Right-sized after a quick scoping call.</p>
+      </article>
+
+      <!-- Controller -->
+      <article class="plan-card" data-plan="controller">
+        <header class="plan-card__head">
+          <h3 class="plan-title">Controller Package</h3>
+          <p class="plan-tagline">Accurate books with job-costing rigor</p>
+        </header>
+
+        <div class="plan-card__price-row">
+          <div class="price-main">
+            <span class="price-prefix">Starting at</span>
+            <span class="price-amount" data-base="1500">$1,500</span>
+            <span class="price-suffix">/mo</span>
+          </div>
+          <div class="price-addon">
+            <span class="addon-amount" data-addon-total="1750">$1,750</span>
+            <span class="addon-note">with business + personal return</span>
+          </div>
+        </div>
+
+        <ul class="plan-features">
+          <li>JobTread assistance & accurate, ready books</li>
+          <li>Monthly WIP report & bank/CC recs</li>
+          <li>Reports by the 15th; A/R & A/P review</li>
+          <li>Loom walkthrough of financials</li>
+        </ul>
+
+        <a href="contact.html" class="cta">Get Controller Proposal</a>
+        <p class="small-note">We tailor for your field apps & users.</p>
+      </article>
+
+      <!-- Bookkeeping -->
+      <article class="plan-card" data-plan="bookkeeping">
+        <header class="plan-card__head">
+          <h3 class="plan-title">Bookkeeping Package</h3>
+          <p class="plan-tagline">Construction-ready bookkeeping</p>
+        </header>
+
+        <div class="plan-card__price-row">
+          <div class="price-main">
+            <span class="price-prefix">Starts at</span>
+            <span class="price-amount" data-base="800">$800</span>
+            <span class="price-suffix">/mo</span>
+          </div>
+          <div class="price-addon">
+            <span class="addon-amount" data-addon-total="1050">$1,050</span>
+            <span class="addon-note">with business + personal return</span>
+          </div>
+        </div>
+
+        <ul class="plan-features">
+          <li>General bookkeeping or job-costing bookkeeping</li>
+          <li>Monthly bank & credit card reconciliations</li>
+          <li>Loom video report review</li>
+          <li>Accurate & ready books for tax</li>
+        </ul>
+
+        <a href="contact.html" class="cta">Get Bookkeeping Proposal</a>
+        <p class="small-note">Add bill pay, payroll, or JobTread setup as needed.</p>
+      </article>
+    </div>
+  </div>
+  </section>
   </main>
 </body>
 </html>

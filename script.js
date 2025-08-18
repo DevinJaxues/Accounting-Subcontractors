@@ -200,3 +200,24 @@ window.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("load", updateLayout);
   window.addEventListener("resize", updateLayout);
 })();
+
+/* ===== Pricing: compute addon totals & nudge emphasis ===== */
+(() => {
+  const ADDON_DELTA = 250; // business + personal return
+  document.querySelectorAll(".plan-card").forEach(card => {
+    const baseEl = card.querySelector(".price-amount");
+    const addonEl = card.querySelector(".addon-amount");
+    if (!baseEl || !addonEl) return;
+
+    const base = Number(baseEl.dataset.base || baseEl.textContent.replace(/[^0-9.]/g, ""));
+    const total = base + ADDON_DELTA;
+    addonEl.dataset.addonTotal = total;
+    addonEl.textContent = `$${total.toLocaleString()}`;
+  });
+
+  // little nudge on hover for featured
+  document.querySelectorAll(".plan-card.featured").forEach(card => {
+    card.addEventListener("mouseenter", () => card.classList.add("is-hot"));
+    card.addEventListener("mouseleave", () => card.classList.remove("is-hot"));
+  });
+})();
