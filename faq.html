@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ • Accounting Subcontractors</title>
+
+  <!-- Preconnect + Non-blocking CSS (matches other pages) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
+
+  <!-- Preload a tiny brand graphic if you want; otherwise remove -->
+  <link rel="preload" as="image" href="images/acc_sub_Logo.webp">
+</head>
+<body class="faq-page">
+
+  <!-- Header (copy/paste same header snippet you use on other pages) -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo-link" aria-label="Home">
+        <img src="images/acc_sub_Logo.webp" alt="Accounting Subcontractors Logo" class="site-logo">
+      </a>
+
+      <nav class="site-nav">
+        <button class="nav-toggle" aria-label="toggle navigation">
+          <span class="hamburger"></span>
+        </button>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://martintaxadvisory.clientportal.com/#/login" target="_blank" class="client-portal-btn">Client Portal</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="faq-hero contact-hero--brand">
+    <div class="container grid-width">
+      <h1>Frequently Asked Questions</h1>
+      <p>Quick answers for general contractors and subcontractors. Search or browse by topic.</p>
+
+      <div class="faq-search">
+        <input id="faqSearch" type="search" placeholder="Search FAQs (e.g., job costing, WIP, S-Corp)…" autocomplete="off" />
+      </div>
+
+      <p class="faq-microcopy">Can’t find it? <a class="link-strong" href="contact.html">Send us a question</a>—we’ll respond and add it here.</p>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <main class="faq-wrap">
+    <div class="container grid-width">
+
+      <section class="faq-accordion" id="faqList">
+
+        <!-- Each .faq-item becomes a collapsible row -->
+        <!-- Q/A pulled from your spreadsheet (column Q = Unnamed: 9, A = Unnamed: 10) -->
+
+        <article class="faq-item" data-tags="coverage, multi-state, work nationwide">
+          <button class="faq-q" aria-expanded="false">
+            <span>Do you work with contractors outside of Utah?</span>
+            <svg class="faq-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Yes — while we’re based in Utah, we work with contractors across the U.S. We handle onboarding remotely and tailor tools, workflows, and reporting to your local requirements.</p>
+          </div>
+        </article>
+
+        <article class="faq-item" data-tags="general contractors, subcontractors, who we serve">
+          <button class="faq-q" aria-expanded="false">
+            <span>Do you work with just general contractors, or subcontractors too?</span>
+            <svg class="faq-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>We work with both general contractors and subcontractors. Our playbooks cover job costing, WIP, progress billing, retainage, and tax strategy for both models.</p>
+          </div>
+        </article>
+
+        <article class="faq-item" data-tags="job costing, taxes, bookkeeping">
+          <button class="faq-q" aria-expanded="false">
+            <span>Can you do job costing and my taxes?</span>
+            <svg class="faq-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Yes. We provide accurate job costing and year-round tax planning and filing—so your books are always “tax-ready” and decisions stay aligned to your after-tax cash flow.</p>
+          </div>
+        </article>
+
+        <article class="faq-item" data-tags="tax strategy, planning, proactive">
+          <button class="faq-q" aria-expanded="false">
+            <span>Do you do tax strategy and planning?</span>
+            <svg class="faq-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Absolutely. We provide proactive strategies tied to your job pipeline, entity structure, compensation, and equipment plans—so you keep more of what you earn.</p>
+          </div>
+        </article>
+
+        <article class="faq-item" data-tags="lower taxes, construction, strategies">
+          <button class="faq-q" aria-expanded="false">
+            <span>Can you help me lower taxes as a general contractor or subcontractor?</span>
+            <svg class="faq-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Yes — we use proven contractor-specific strategies around job costing accuracy, timing of purchases, entity choice, and compensation planning to reduce liability.</p>
+          </div>
+        </article>
+
+        <article class="faq-item" data-tags="exit strategy, planning, owner goals">
+          <button class="faq-q" aria-expanded="false">
+            <span>Can you help me with creating an exit strategy and long-term plan?</span>
+            <svg class="faq-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Yes — we work with owners to develop clear, practical targets (profit, backlog, and team metrics), then align tax and reporting to increase enterprise value.</p>
+          </div>
+        </article>
+
+        <article class="faq-item" data-tags="entity choice, s-corp, llc">
+          <button class="faq-q" aria-expanded="false">
+            <span>Can you help me decide between an LLC and an S-Corp?</span>
+            <svg class="faq-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Yes — we’ll look at your business structure, reasonable comp, liability, and growth plans to recommend an approach and help implement the change if it’s beneficial.</p>
+          </div>
+        </article>
+
+        <article class="faq-item" data-tags="why us, differentiator, specialized">
+          <button class="faq-q" aria-expanded="false">
+            <span>Why should I go with Accounting Subcontractors?</span>
+            <svg class="faq-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>We combine construction-specific bookkeeping, WIP, and job-costing with proactive tax strategy—under one roof—so your reporting, decisions, and taxes are in sync.</p>
+          </div>
+        </article>
+
+        <article class="faq-item" data-tags="cfo, tax strategist, controller, together">
+          <button class="faq-q" aria-expanded="false">
+            <span>Why should I have my CFO, tax strategist, and controller together?</span>
+            <svg class="faq-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>When your financial strategy, reporting, and tax plan are handled by the same team, you get faster decisions, fewer surprises, and better after-tax outcomes.</p>
+          </div>
+        </article>
+
+        <article class="faq-item" data-tags="job costing vs bookkeeping, difference">
+          <button class="faq-q" aria-expanded="false">
+            <span>How is job costing different from standard bookkeeping?</span>
+            <svg class="faq-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Standard bookkeeping shows total income and expenses. Job costing tracks costs and profit by job so you know which work is winning and where to adjust.</p>
+          </div>
+        </article>
+
+        <article class="faq-item" data-tags="identify losing jobs, margin, accuracy">
+          <button class="faq-q" aria-expanded="false">
+            <span>Can you identify which jobs are losing money?</span>
+            <svg class="faq-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Yes — with proper job costing, we can pinpoint under-performing jobs fast, then fix issues like labor coding, change orders, or vendor leakages.</p>
+          </div>
+        </article>
+
+        <article class="faq-item" data-tags="wip reports, under/over billing">
+          <button class="faq-q" aria-expanded="false">
+            <span>Can you provide WIP reports and help me understand them?</span>
+            <svg class="faq-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Yes — we prepare Work in Progress (WIP) reports and review under/over billing, percent-complete, and margin trends with you monthly.</p>
+          </div>
+        </article>
+
+        <article class="faq-item" data-tags="revenue recognition, percent of completion, completed contract">
+          <button class="faq-q" aria-expanded="false">
+            <span>Should I use percent-of-completion or completed contract?</span>
+            <svg class="faq-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>It depends on project size, duration, and your goals. We’ll help select and implement the right method and keep your tax plan aligned.</p>
+          </div>
+        </article>
+
+        <article class="faq-item" data-tags="retainage, progress billing, cash flow">
+          <button class="faq-q" aria-expanded="false">
+            <span>How do retainage and progress billing affect accounting?</span>
+            <svg class="faq-caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>They directly impact cash flow and revenue timing. We set up your AR, invoicing cadence, and WIP to reflect retainage and progress billing accurately.</p>
+          </div>
+        </article>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Blog Teasers (from your ideas list) -->
+  <section class="blog-teasers">
+    <div class="container grid-width">
+      <h2>From the Field: Coming Soon</h2>
+      <p class="sub">We’re publishing short, practical pieces for contractors. Here’s a preview.</p>
+
+      <div class="teaser-grid">
+        <article class="teaser">
+          <img src="images/coming-soon.webp" alt="Blog coming soon" loading="lazy" decoding="async" width="560" height="320">
+          <h3>The 5 Biggest Job Costing Mistakes Contractors Make</h3>
+          <p class="excerpt">How to fix leakage in labor, materials, subs, and change orders.</p>
+          <span class="pill">Job Costing</span>
+        </article>
+        <article class="teaser">
+          <img src="images/coming-soon.webp" alt="Blog coming soon" loading="lazy" decoding="async" width="560" height="320">
+          <h3>S-Corp vs LLC vs Partnership for Contractors</h3>
+          <p class="excerpt">Entity choice, reasonable comp, and tax planning basics.</p>
+          <span class="pill">Tax Strategy</span>
+        </article>
+        <article class="teaser">
+          <img src="images/coming-soon.webp" alt="Blog coming soon" loading="lazy" decoding="async" width="560" height="320">
+          <h3>5 Reports Every GC Should Review Monthly</h3>
+          <p class="excerpt">Cash, WIP, AR/AP aging, job margin, and backlog in plain English.</p>
+          <span class="pill">Reporting</span>
+        </article>
+        <article class="teaser">
+          <img src="images/coming-soon.webp" alt="Blog coming soon" loading="lazy" decoding="async" width="560" height="320">
+          <h3>Why JobTread Saves Contractors Thousands</h3>
+          <p class="excerpt">Cleaner coding, fewer surprises, better margins—here’s how.</p>
+          <span class="pill">Tools</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (reuse your existing) -->
+  <footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-left">
+      <p><strong>&copy; 2025 Accounting Subcontractors. All rights reserved.</strong></p>
+      <p>2901 W Bluegrass Blvd, Ste 200, Lehi, Utah 84043, US</p>
+      <p>(435)-465-1040</p>
+    </div>
+    <div class="footer-right">
+  <!-- TikTok -->
+  <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+    <svg width="52" height="50" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M21 8.5a7.5 7.5 0 01-5.2-2.2v7.4a6.7 6.7 0 11-6.7-6.7c.4 0 .8 0 1.2.1v3.2a3.4 3.4 0 00-1.2-.2 3.5 3.5 0 103.5 3.5V2.5h3.1a7.5 7.5 0 004.3 4.1v1.9z"/>
+    </svg>
+  </a>
+  <!-- Facebook -->
+  <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+    <svg width="52" height="52" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M13 22v-8h3l.5-3H13V9.3c0-.9.3-1.5 1.7-1.5H17V5.1A21 21 0 0014.6 5C12 5 10.2 6.6 10.2 9v2H7.5v3h2.7v8h2.8z"/>
+    </svg>
+  </a>
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+    <svg width="52" height="52" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M6.94 8.9H3.75V20h3.19V8.9zM5.35 7.5A1.85 1.85 0 115.34 4 1.85 1.85 0 015.35 7.5zM20.25 20h-3.18v-5.8c0-1.38-.5-2.33-1.75-2.33-.95 0-1.52.64-1.77 1.26-.09.22-.11.53-.11.84V20h-3.18s.04-9.9 0-11h3.18v1.56c.42-.65 1.17-1.57 2.85-1.57 2.08 0 3.66 1.36 3.66 4.28V20z"/>
+    </svg>
+  </a>
+  </div>
+    </footer>
+
+  <!-- JSON-LD (FAQPage) for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Do you work with contractors outside of Utah?","acceptedAnswer":{"@type":"Answer","text":"Yes — while we’re based in Utah, we work with contractors across the U.S. We handle onboarding remotely and tailor tools, workflows, and reporting to your local requirements."}},
+      {"@type":"Question","name":"Do you work with just general contractors, or subcontractors too?","acceptedAnswer":{"@type":"Answer","text":"We work with both general contractors and subcontractors. Our playbooks cover job costing, WIP, progress billing, retainage, and tax strategy for both models."}},
+      {"@type":"Question","name":"Can you do job costing and my taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes. We provide accurate job costing and year-round tax planning and filing—so your books are always tax-ready and decisions stay aligned to your after-tax cash flow."}},
+      {"@type":"Question","name":"Do you do tax strategy and planning?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. We provide proactive strategies tied to your job pipeline, entity structure, compensation, and equipment plans—so you keep more of what you earn."}},
+      {"@type":"Question","name":"Can you help me lower taxes as a general contractor or subcontractor?","acceptedAnswer":{"@type":"Answer","text":"Yes — we use proven contractor-specific strategies around job costing accuracy, timing of purchases, entity choice, and compensation planning to reduce liability."}},
+      {"@type":"Question","name":"Can you help me with creating an exit strategy and long-term plan?","acceptedAnswer":{"@type":"Answer","text":"Yes — we work with owners to develop clear, practical targets (profit, backlog, and team metrics), then align tax and reporting to increase enterprise value."}},
+      {"@type":"Question","name":"Can you help me decide between an LLC and an S-Corp?","acceptedAnswer":{"@type":"Answer","text":"Yes — we’ll look at your business structure, reasonable comp, liability, and growth plans to recommend an approach and help implement the change if it’s beneficial."}},
+      {"@type":"Question","name":"Why should I go with Accounting Subcontractors?","acceptedAnswer":{"@type":"Answer","text":"We combine construction-specific bookkeeping, WIP, and job-costing with proactive tax strategy—under one roof—so your reporting, decisions, and taxes are in sync."}},
+      {"@type":"Question","name":"Why should I have my CFO, tax strategist, and controller together?","acceptedAnswer":{"@type":"Answer","text":"When your financial strategy, reporting, and tax plan are handled by the same team, you get faster decisions, fewer surprises, and better after-tax outcomes."}},
+      {"@type":"Question","name":"How is job costing different from standard bookkeeping?","acceptedAnswer":{"@type":"Answer","text":"Standard bookkeeping shows total income and expenses. Job costing tracks costs and profit by job so you know which work is winning and where to adjust."}},
+      {"@type":"Question","name":"Can you identify which jobs are losing money?","acceptedAnswer":{"@type":"Answer","text":"Yes — with proper job costing, we can pinpoint under-performing jobs fast, then fix issues like labor coding, change orders, or vendor leakages."}},
+      {"@type":"Question","name":"Can you provide WIP reports and help me understand them?","acceptedAnswer":{"@type":"Answer","text":"Yes — we prepare Work in Progress (WIP) reports and review under/over billing, percent-complete, and margin trends with you monthly."}},
+      {"@type":"Question","name":"Should I use percent-of-completion or completed contract?","acceptedAnswer":{"@type":"Answer","text":"It depends on project size, duration, and your goals. We’ll help select and implement the right method and keep your tax plan aligned."}},
+      {"@type":"Question","name":"How do retainage and progress billing affect accounting?","acceptedAnswer":{"@type":"Answer","text":"They directly impact cash flow and revenue timing. We set up your AR, invoicing cadence, and WIP to reflect retainage and progress billing accurately."}}
+    ]
+  }
+    </script>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
