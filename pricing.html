@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- /* =======================================
+   Accounting Subcontractors — v1.0
+   Copyright owned by Devin J. Monsen
+   ======================================= -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Affordable bookkeeping, accounting, controller, CFO, and advisory packages for subcontractors, construction and real estate. Priority reporting and tax planning tailored to construction businesses.">
   <title>Pricing | Accounting Subcontractors</title>
   <!-- Non-blocking CSS -->
   <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -19,23 +24,32 @@
 <body class="pricing-page">
   <header class="site-header">
   <div class="container">
-    <img src="images/acc_sub_Logo.webp" alt="Accounting Subcontractors Logo" class="site-logo" />
+    <!-- Group both logos on the left -->
+    <div class="logo-group">
+      <a href="https://accountingsubs.com/index.html">
+        <img src="images/acc_sub_Logo.webp" alt="Accounting Subcontractors Logo" class="site-logo">
+      </a>
+      <a href="https://mta.cpa">
+        <img src="images/mta.webp" alt="Martin Tax Logo" class="site-logo parent-logo">
+      </a>
+    </div>
+
+    <!-- Navigation with hamburger -->
     <nav class="site-nav">
       <button class="nav-toggle" aria-label="toggle navigation">
         <span class="hamburger"></span>
       </button>
 
-      <!-- NORMALIZED WRAPPER (matches other pages) -->
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="pricing.html">Pricing</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
         <a href="https://martintaxadvisory.clientportal.com/#/login" target="_blank" class="client-portal-btn">
           Client Portal
         </a>
       </div>
-      <!-- /nav-links -->
     </nav>
   </div>
 </header>
@@ -43,7 +57,7 @@
   <main>
     <section class="fade-in">
       <div class="container">
-        <h2 style="text-align:center">Service Comparison</h2>
+        <h1 class="service-comparison-title">Service Comparison</h1>
         <div class="table-wrapper">
         <table class="comparison-table" style="width: 50%; margin: 0 auto;">
           <thead>
@@ -55,14 +69,19 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>Construction Expertise</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td></tr>
-            <tr><td>Real-time Dashboard</td><td class="cross">✘</td><td class="check">✔</td><td class="check">✔</td></tr>
-            <tr><td>Payroll Integration</td><td class="cross">✘</td><td class="check">✔</td><td class="check">✔</td></tr>
-            <tr><td>1099 Filings</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td></tr>
-            <tr><td>Cloud Document Access</td><td class="check">✔</td><td class="check">✔</td><td class="check">✔</td></tr>
-            <tr><td>CFO Advisory</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td></tr>
-            <tr><td>Dedicated Support</td><td class="cross">✘</td><td class="check">✔</td><td class="check">✔</td></tr>
-            <tr><td>Construction-Specific Reporting</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td></tr>
+            <tr><td>Industry Expertise(Construction & Real Estate)</td><td class="check">✔</td><td class="cross">✘</td><td class="check">✔</td></tr>
+            <tr><td>CPA Oversight</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td></tr>
+            <tr><td>Tax Expertise</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td></tr>
+            <tr><td>Chart of Accounts Setup</td><td class="cross">✘</td><td class="check">✔</td><td class="check">✔</td></tr>
+            <tr><td>Job Costing & Reporting</td><td class="cross">✘</td><td class="check">✔</td><td class="check">✔</td></tr>
+            <tr><td>Cashflow Forecasting</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td></tr>
+            <tr><td>Monthly Reporting</td><td class="cross">✘</td><td class="check">✔</td><td class="check">✔</td></tr>
+            <tr><td>Tax Return Ready Books</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td></tr>
+            <tr><td>Audit Protection</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td></tr>
+            <tr><td>Scalability</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td></tr>
+            <tr><td>Owner Time Saved</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td></tr>
+            <tr><td>Cost of Errors</td><td class="cross">✘</td><td class="cross">✘</td><td class="check">✔</td></tr>
+            <tr><td>JobTread and QuickBooks Certified</td><td class="cross">✘</td><td class="check">✔</td><td class="check">✔</td></tr>
           </tbody>
         </table>
         </div>
@@ -75,134 +94,225 @@
   <section class="pricing-plans fade-in">
   <div class="container grid-width">
     <div class="plans-header">
-      <h2>Choose a plan that grows with you</h2>
-      <p>Transparent, construction-ready accounting. Prices shown are starting points; we right-size after a brief kickoff.</p>
+  <h2>Choose your plan</h2>
+  <p>Transparent, construction-ready accounting. Each card shows all included services and available add-ons.</p>
+</div>
+
+<div class="plan-grid plan-grid--four">
+  <!-- BOOKKEEPING -->
+  <article class="plan-card" data-plan="bookkeeping">
+    <header class="plan-card__head">
+      <h3 class="plan-title">Bookkeeping<br>Package</h3>
+      <!-- <p class="plan-tagline">removed per request</p> -->
+    </header>
+
+    <div class="plan-card__price-row">
+      <div class="price-main">
+        <span class="price-prefix">Starting at</span>
+        <span class="price-amount" data-base="800">$800</span>
+        <span class="price-suffix">/mo</span>
+      </div>
+      <div class="price-addon">
+        <span class="addon-amount" data-addon-total="1050">$1,050</span>
+        <span class="addon-note">with business + personal return</span>
+      </div>
     </div>
 
-    <div class="plan-grid">
-      <!-- CFO+ -->
-      <article class="plan-card featured" data-plan="cfo-plus">
-        <div class="plan-card__ribbon">Most Comprehensive</div>
-        <header class="plan-card__head">
-          <h3 class="plan-title">CFO+ Package</h3>
-          <p class="plan-tagline">Everything in Controller + CFO, plus advanced planning</p>
-        </header>
+    <div class="plan-body">
+      <h4 class="plan-subhead">Included</h4>
+      <ul class="plan-features">
+      <li>General Bookkeeping</li>
+      <li>Monthly Bank and Credit Card Reconciliations</li>
+      <li>Accurate &amp; Ready Books</li>
+      <li>Video of Monthly Review of Financials</li>
+</ul>
 
-        <div class="plan-card__price-row">
-          <div class="price-main">
-            <span class="price-prefix">Starting at</span>
-            <span class="price-amount" data-base="3500">$3,500</span>
-            <span class="price-suffix">/mo</span>
-          </div>
-          <div class="price-addon">
-            <span class="addon-amount" data-addon-total="3750">$3,750</span>
-            <span class="addon-note">with business + personal return</span>
-          </div>
-        </div>
+      <a href="contact.html" class="cta btn-proposal">Get Proposal</a>
+      <p class="small-note">Final pricing depends on toolchain & monthly volume.</p>
+    </div>
+  </article>
 
-        <ul class="plan-features">
-          <li>Cash flow projections & KPI dashboard</li>
-          <li>Monthly WIP reporting & review</li>
-          <li>Controller oversight + CFO strategy</li>
-          <li>Monthly meeting cadence</li>
+  <!-- CONTROLLER -->
+  <article class="plan-card" data-plan="controller">
+    <header class="plan-card__head">
+      <h3 class="plan-title">Controller<br>Package</h3>
+    </header>
+
+    <div class="plan-card__price-row">
+      <div class="price-main">
+        <span class="price-prefix">Starting at</span>
+        <span class="price-amount" data-base="1500">$1,500</span>
+        <span class="price-suffix">/mo</span>
+      </div>
+      <div class="price-addon">
+        <span class="addon-amount" data-addon-total="1750">$1,750</span>
+        <span class="addon-note">with business + personal return</span>
+      </div>
+    </div>
+
+    <div class="plan-body">
+      <h4 class="plan-subhead">Included</h4>
+     <ul class="plan-features">
+      <!-- Bookkeeping set -->
+      <li>General Bookkeeping</li>
+      <li>Monthly Bank and Credit Card Reconciliations</li>
+      <li>Accurate &amp; Ready Books</li>
+      <li>Video of Monthly Review of Financials</li>
+      <!-- Controller adds -->
+     <li>JobTread Integration</li>
+     <li>Job Costing</li>
+     <li>Monthly WIP Report</li>
+      <li>Reports by the 15th of the following month</li>
+      <li>A/R and A/P Review</li>
+    </ul>
+
+      <a href="contact.html" class="cta btn-proposal">Get Proposal</a>
+      <p class="small-note">We tailor for your field apps, users, and approvals.</p>
+    </div>
+  </article>
+
+  <!-- CFO -->
+  <article class="plan-card featured" data-plan="cfo">
+    <div class="plan-card__ribbon">Most Comprehensive</div>
+    <header class="plan-card__head">
+      <h3 class="plan-title">CFO<br>Package</h3>
+    </header>
+
+    <div class="plan-card__price-row">
+      <div class="price-main">
+        <span class="price-prefix">Starting at</span>
+        <span class="price-amount" data-base="2500">$2,500</span>
+        <span class="price-suffix">/mo</span>
+      </div>
+      <div class="price-addon">
+        <span class="addon-amount" data-addon-total="2750">$2,750</span>
+        <span class="addon-note">with business + personal return</span>
+      </div>
+    </div>
+
+    <div class="plan-body">
+      <h4 class="plan-subhead">Included</h4>
+       <ul class="plan-features">
+        <!-- Bookkeeping set -->
+        <li>General Bookkeeping</li>
+        <li>Monthly Bank and Credit Card Reconciliations</li>
+       <li>Accurate &amp; Ready Books</li>
+        <li>Video of Monthly Review of Financials</li>
+        <!-- Controller set -->
+       <li>JobTread Integration</li>
+          <li>Job Costing</li>
+          <li>Monthly WIP Report</li>
+          <li class="priority-report">
+          Reports by the 10th of the following month
+          <small class="priority-note">Priority Reporting!</small>
+          </li>
+          <li>A/R and A/P Review</li>
+         <!-- CFO adds -->
+         <li>12-Week Cash Flow Projection</li>
+        <li>Cash Flow &amp; P&amp;L Analysis</li>
+        <li>Monthly KPI Dashboard</li>
+          <li>Monthly WIP Review with Leadership</li>
+          <li>Controller-Level Oversight</li>
+          <li>Monthly Leadership Meeting</li>
         </ul>
 
-        <a href="contact.html" class="cta cta--primary">Get CFO+ Proposal</a>
-        <p class="small-note">Final pricing depends on toolchain & job volume.</p>
-      </article>
+      <a href="contact.html" class="cta cta--primary btn-proposal">Get Proposal</a>
+      <p class="small-note">Scope and cadence set in a short kickoff call.</p>
+    </div>
+  </article>
 
-      <!-- CFO -->
-      <article class="plan-card" data-plan="cfo">
-        <header class="plan-card__head">
-          <h3 class="plan-title">CFO Package</h3>
-          <p class="plan-tagline">Modeling, analysis, and financial leadership</p>
-        </header>
+  <!-- ADVISORY -->
+  <article class="plan-card" data-plan="advisory">
+    <header class="plan-card__head">
+      <h3 class="plan-title">Advisory<br>Package</h3>
+    </header>
 
-        <div class="plan-card__price-row">
-          <div class="price-main">
-            <span class="price-prefix">Starting at</span>
-            <span class="price-amount" data-base="2500">$2,500</span>
-            <span class="price-suffix">/mo</span>
-          </div>
-          <div class="price-addon">
-            <span class="addon-amount" data-addon-total="2750">$2,750</span>
-            <span class="addon-note">with business + personal return</span>
-          </div>
-        </div>
+    <div class="plan-card__price-row">
+      <div class="price-main">
+        <span class="price-prefix">Starting at</span>
+        <span class="price-amount" data-base="3500">$3,500</span>
+        <span class="price-suffix">/mo</span>
+      </div>
+      <div class="price-addon">
+        <span class="addon-amount" data-addon-total="3750">$3,750</span>
+        <span class="addon-note">with business + personal return</span>
+      </div>
+    </div>
 
-        <ul class="plan-features">
-          <li>12-week cash flow projection</li>
-          <li>Cash flow & P&L analysis</li>
-          <li>Monthly KPI & WIP reporting</li>
-          <li>Monthly leadership sync</li>
-        </ul>
+    <div class="plan-body">
+      <h4 class="plan-subhead">Included</h4>
+      <ul class="plan-features">
+      <!-- Bookkeeping set -->
+      <li>General Bookkeeping</li>
+      <li>Monthly Bank and Credit Card Reconciliations</li>
+      <li>Accurate &amp; Ready Books</li>
+      <li>Video of Monthly Review of Financials</li>
+      <!-- Controller set -->
+      <li>JobTread Integration</li>
+      <li>Job Costing</li>
+      <li>Monthly WIP Report</li>
+      <li class="priority-report">
+      Reports by the 10th of the following month
+     <small class="priority-note">Priority Reporting!</small>
+      </li>
+      <li>A/R and A/P Review</li>
+      <!-- CFO set -->
+      <li>12-Week Cash Flow Projection</li>
+      <li>Cash Flow &amp; P&amp;L Analysis</li>
+      <li>Monthly KPI Dashboard</li>
+      <li>Monthly WIP Review with Leadership</li>
+      <li>Controller-Level Oversight</li>
+      <li>Monthly Leadership Meeting</li>
+      <!-- Advisory adds -->
+      <li>Advanced Planning &amp; Forecasting</li>
+      <li>Custom KPI Dashboard &amp; Model Updates</li>
+      <li>Margin Review &amp; Trend Insights</li>
+      <li>CFO Guidance with Controller Discipline</li>
+    </ul>
 
-        <a href="contact.html" class="cta">Get CFO Proposal</a>
-        <p class="small-note">Right-sized after a quick scoping call.</p>
-      </article>
-
-      <!-- Controller -->
-      <article class="plan-card" data-plan="controller">
-        <header class="plan-card__head">
-          <h3 class="plan-title">Controller Package</h3>
-          <p class="plan-tagline">Accurate books with job-costing rigor</p>
-        </header>
-
-        <div class="plan-card__price-row">
-          <div class="price-main">
-            <span class="price-prefix">Starting at</span>
-            <span class="price-amount" data-base="1500">$1,500</span>
-            <span class="price-suffix">/mo</span>
-          </div>
-          <div class="price-addon">
-            <span class="addon-amount" data-addon-total="1750">$1,750</span>
-            <span class="addon-note">with business + personal return</span>
-          </div>
-        </div>
-
-        <ul class="plan-features">
-          <li>JobTread assistance & accurate, ready books</li>
-          <li>Monthly WIP report & bank/CC recs</li>
-          <li>Reports by the 15th; A/R & A/P review</li>
-          <li>Loom walkthrough of financials</li>
-        </ul>
-
-        <a href="contact.html" class="cta">Get Controller Proposal</a>
-        <p class="small-note">We tailor for your field apps & users.</p>
-      </article>
-
-      <!-- Bookkeeping -->
-      <article class="plan-card" data-plan="bookkeeping">
-        <header class="plan-card__head">
-          <h3 class="plan-title">Bookkeeping Package</h3>
-          <p class="plan-tagline">Construction-ready bookkeeping</p>
-        </header>
-
-        <div class="plan-card__price-row">
-          <div class="price-main">
-            <span class="price-prefix">Starts at</span>
-            <span class="price-amount" data-base="800">$800</span>
-            <span class="price-suffix">/mo</span>
-          </div>
-          <div class="price-addon">
-            <span class="addon-amount" data-addon-total="1050">$1,050</span>
-            <span class="addon-note">with business + personal return</span>
-          </div>
-        </div>
-
-        <ul class="plan-features">
-          <li>General bookkeeping or job-costing bookkeeping</li>
-          <li>Monthly bank & credit card reconciliations</li>
-          <li>Loom video report review</li>
-          <li>Accurate & ready books for tax</li>
-        </ul>
-
-        <a href="contact.html" class="cta">Get Bookkeeping Proposal</a>
-        <p class="small-note">Add bill pay, payroll, or JobTread setup as needed.</p>
-      </article>
+      <a href="contact.html" class="cta btn-proposal">Get Proposal</a>
+      <p class="small-note">We right-size after a brief scoping call.</p>
+    </div>
+  </article>
+</div>
     </div>
   </div>
+  <p class="pricing-fine-print">
+  <em>Inquire for the following: payroll, implementation, bill pay, tax planning, entity structure, exit strategy</em>
+  </p>
   </section>
   </main>
+  <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-left">
+          <p><strong>&copy; 2025 Accounting Subcontractors. All rights reserved.</strong></p>
+          <p>2901 W Bluegrass Blvd, Ste 200, Lehi, Utah 84043, US</p>
+          <p>(435)-465-1040</p>
+        </div>
+        <div class="footer-right">
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+        <svg width="52" height="50" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M21 8.5a7.5 7.5 0 01-5.2-2.2v7.4a6.7 6.7 0 11-6.7-6.7c.4 0 .8 0 1.2.1v3.2a3.4 3.4 0 00-1.2-.2 3.5 3.5 0 103.5 3.5V2.5h3.1a7.5 7.5 0 004.3 4.1v1.9z"/>
+        </svg>
+      </a>
+      <!-- Facebook -->
+      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M13 22v-8h3l.5-3H13V9.3c0-.9.3-1.5 1.7-1.5H17V5.1A21 21 0 0014.6 5C12 5 10.2 6.6 10.2 9v2H7.5v3h2.7v8h2.8z"/>
+        </svg>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M6.94 8.9H3.75V20h3.19V8.9zM5.35 7.5A1.85 1.85 0 115.34 4 1.85 1.85 0 015.35 7.5zM20.25 20h-3.18v-5.8c0-1.38-.5-2.33-1.75-2.33-.95 0-1.52.64-1.77 1.26-.09.22-.11.53-.11.84V20h-3.18s.04-9.9 0-11h3.18v1.56c.42-.65 1.17-1.57 2.85-1.57 2.08 0 3.66 1.36 3.66 4.28V20z"/>
+        </svg>
+      </a>
+      </div>
+      <div class="footer-links">
+      <a href="faq.html" class="footer-btn">FAQ</a>
+      </div>
+      </div>
+    </footer>
 </body>
 </html>

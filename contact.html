@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- /* =======================================
+   Accounting Subcontractors — v1.0
+   Copyright owned by Devin J. Monsen
+   ======================================= -->
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Affordable bookkeeping, accounting, controller, CFO, and advisory packages for subcontractors, construction and real estate. Priority reporting and tax planning tailored to construction businesses.">
   <title>Contact | Accounting Subcontractors</title>
-
   <!-- Non-blocking CSS -->
     <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="styles.css"></noscript>
@@ -25,23 +29,32 @@
   <!-- Header (same markup as other pages) -->
   <header class="site-header">
   <div class="container">
-    <img src="images/acc_sub_Logo.webp" alt="Accounting Subcontractors Logo" class="site-logo" />
+    <!-- Group both logos on the left -->
+    <div class="logo-group">
+      <a href="https://accountingsubs.com/index.html">
+        <img src="images/acc_sub_Logo.webp" alt="Accounting Subcontractors Logo" class="site-logo">
+      </a>
+      <a href="https://mta.cpa">
+        <img src="images/mta.webp" alt="Martin Tax Logo" class="site-logo parent-logo">
+      </a>
+    </div>
+
+    <!-- Navigation with hamburger -->
     <nav class="site-nav">
       <button class="nav-toggle" aria-label="toggle navigation">
         <span class="hamburger"></span>
       </button>
 
-      <!-- NORMALIZED WRAPPER (matches other pages) -->
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="pricing.html">Pricing</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
         <a href="https://martintaxadvisory.clientportal.com/#/login" target="_blank" class="client-portal-btn">
           Client Portal
         </a>
       </div>
-      <!-- /nav-links -->
     </nav>
   </div>
 </header>
@@ -110,7 +123,7 @@
           <p class="form-sub">Briefly describe your jobs, bookkeeping status, and goals—we’ll reply with next steps.</p>
 
           <!-- IMPORTANT: replace ACTION_FROM_HOMEPAGE_FORMSPREE with the same Formspree action URL you used on the homepage -->
-          <form class="contact-form contact-form--card" action="ACTION_FROM_HOMEPAGE_FORMSPREE" method="POST">
+          <form class="contact-form contact-form--card" action="https://formspree.io/f/xqallwnl" method="POST">
             <div class="form-row">
               <label for="name">Full Name</label>
               <input id="name" name="name" type="text" required/>
@@ -129,11 +142,42 @@
             </div>
 
             <button class="btn-primary btn-block" type="submit">Send Message</button>
-            <p class="form-hint">Prefer a call? <a class="link-strong" href="https://calendly.com/" target="_blank" rel="noopener">Book time here</a>.</p>
           </form>
         </div>
       </div>
     </section>
   </main>
+  <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-left">
+          <p><strong>&copy; 2025 Accounting Subcontractors. All rights reserved.</strong></p>
+          <p>2901 W Bluegrass Blvd, Ste 200, Lehi, Utah 84043, US</p>
+          <p>(435)-465-1040</p>
+        </div>
+        <div class="footer-right">
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+        <svg width="52" height="50" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M21 8.5a7.5 7.5 0 01-5.2-2.2v7.4a6.7 6.7 0 11-6.7-6.7c.4 0 .8 0 1.2.1v3.2a3.4 3.4 0 00-1.2-.2 3.5 3.5 0 103.5 3.5V2.5h3.1a7.5 7.5 0 004.3 4.1v1.9z"/>
+        </svg>
+      </a>
+      <!-- Facebook -->
+      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M13 22v-8h3l.5-3H13V9.3c0-.9.3-1.5 1.7-1.5H17V5.1A21 21 0 0014.6 5C12 5 10.2 6.6 10.2 9v2H7.5v3h2.7v8h2.8z"/>
+        </svg>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M6.94 8.9H3.75V20h3.19V8.9zM5.35 7.5A1.85 1.85 0 115.34 4 1.85 1.85 0 015.35 7.5zM20.25 20h-3.18v-5.8c0-1.38-.5-2.33-1.75-2.33-.95 0-1.52.64-1.77 1.26-.09.22-.11.53-.11.84V20h-3.18s.04-9.9 0-11h3.18v1.56c.42-.65 1.17-1.57 2.85-1.57 2.08 0 3.66 1.36 3.66 4.28V20z"/>
+        </svg>
+      </a>
+      </div>
+      <div class="footer-links">
+      <a href="faq.html" class="footer-btn">FAQ</a>
+      </div>
+      </div>
+    </footer>
 </body>
 </html>

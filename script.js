@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
         el,
         { opacity: 0, y: 30 },
         {
-          opacity: 1, y: 0, duration: 1, ease: "power2.out", delay: i * 0.06,
+          opacity: 1, y: 0, duration: 1, ease: "power2.out", delay: i * 0.02,
           scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none none", once: true }
         }
       );
@@ -227,7 +227,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const TABLE = document.querySelector(".comparison-table");
   if (!TABLE || !TABLE.tHead || !TABLE.tHead.rows.length) return;
 
-  const desiredOrder = ["Accounting Subcontractors", "DIY", "Bookkeepers"];
+  const desiredOrder = ["Accounting Subcontractors", "Bookkeepers", "DIY"];
 
   const headRow = TABLE.tHead.rows[0];
   const headCells = Array.from(headRow.cells);
@@ -304,3 +304,4 @@ window.addEventListener("DOMContentLoaded", () => {
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 })();
+

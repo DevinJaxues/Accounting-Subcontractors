@@ -1,6 +1,7 @@
-/* =========================
-   THEME TOKENS
-   ========================= */
+/* =======================================
+   Accounting Subcontractors — v1.0
+   Copyright owned by Devin J. Monsen
+   ======================================= */
 :root{
   --sage-green:#5a775f;
   --pure-white:#ffffff;
@@ -304,7 +305,7 @@ body.about-page, body.contact-page{padding-top:0 !important}
    ========================= */
 .pricing-plans{padding:2.5rem 1rem 4rem;background:#fff}
 .plans-header{text-align:center;max-width:800px;margin:0 auto 1.25rem}
-.plans-header h2{font-size:3rem;margin-bottom:.25rem;color:var(--deep-green-black)}
+.plans-header h2{font-size:5rem;margin-bottom:.25rem;color:var(--deep-green-black)}
 .plans-header p{color:#4a4a4a}
 
 .plan-grid{
@@ -329,7 +330,7 @@ body.about-page, body.contact-page{padding-top:0 !important}
   padding:5px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:.2px
 }
 .plan-card__head{margin-bottom:.5rem;padding-right:96px} /* space for ribbon */
-.plan-title{margin:0;color:var(--deep-green-black);font-size:1.0rem;overflow-wrap:anywhere}
+.plan-title{margin:0;color:var(--deep-green-black);font-size:2.5rem;overflow-wrap:anywhere}
 .plan-tagline{margin:.25rem 0 0;color:#4a4a4a;font-size:.95rem;overflow-wrap:anywhere}
 
 .plan-card__price-row{
@@ -715,4 +716,415 @@ body.about-page, body.contact-page{padding-top:0 !important}
 /* small devices: a touch more breathing room */
 @media (max-width: 480px){
   .about-hero{ padding-left: 16px; padding-right: 16px; }
+}
+
+/* Pricing: 3-column desktop grid */
+.plan-grid--three{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:1.25rem;
+}
+@media (max-width: 1100px){ .plan-grid--three{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 720px){ .plan-grid--three{ grid-template-columns: 1fr; } }
+
+/* Simpler card body with clear subheads */
+.plan-body{ display:flex; flex-direction:column; gap:.75rem; }
+.plan-subhead{
+  font-size:.95rem; letter-spacing:.2px; text-transform:uppercase;
+  color:#2f6a43; font-weight:900; margin-top:.25rem
+}
+.plan-addons{ list-style:none; padding:0; margin:0; }
+.plan-addons li{
+  padding:.5rem 0; border-bottom:1px dashed #e9efe9; color:#333; font-size:.95rem;
+}
+.plan-addons li:last-child{ border-bottom:none; }
+
+/* Keep proposal buttons aligned at the bottom */
+.plan-card{ display:flex; flex-direction:column; }
+.plan-body{ flex: 1 1 auto; }
+.btn-proposal{ margin-top:auto; align-self:flex-start; }
+
+.plan-card .plan-card__head {
+  text-align: center; 
+  padding-right: 0 !important; /* kill leftover ribbon padding */
+}
+
+@media (max-width: 768px){
+  .plan-card .plan-title {
+    font-size: 34px;        /* smaller starting size for mobile */
+  }
+}
+.plan-tagline{ display: none !important; } /* remove subtitle under title */
+
+/* Keep 4 cards in a row on desktop, wrap below on smaller screens */
+.plan-grid--four{
+  display: grid;
+  gap: 1.25rem;
+}
+@media (min-width: 1200px){
+  .plan-grid--four{ grid-template-columns: repeat(4, 1fr); }
+}
+@media (min-width: 900px) and (max-width: 1199.98px){
+  .plan-grid--four{ grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 600px) and (max-width: 899.98px){
+  .plan-grid--four{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 599.98px){
+  .plan-grid--four{ grid-template-columns: 1fr; }
+}
+
+/* Keep price rows tidy even with bigger titles */
+.plan-card__price-row{
+  flex-wrap: wrap;
+  row-gap: .35rem;
+}
+.price-main{
+  flex: 1 1 auto;
+  min-width: 240px;
+  white-space: nowrap;
+}
+
+/* Ensure the featured ribbon never overlaps the (now larger) title on desktop */
+@media (min-width: 992px){
+  .plan-card.featured .plan-card__head{
+    position: relative;
+    padding-top: 2.2rem;   /* vertical clearance for ribbon */
+  }
+  .plan-card.featured .plan-card__ribbon{
+    position: absolute !important;
+    top: 10px; right: 12px;
+    pointer-events: none;
+  }
+}
+
+/* Keep buttons aligned at the bottom */
+.plan-card{ display:flex; flex-direction:column; }
+.plan-body{ flex:1 1 auto; display:flex; flex-direction:column; gap:.75rem; }
+.btn-proposal{ margin-top:auto; }
+
+/* Pricing: give the row more width and wider columns */
+.pricing-plans .container.grid-width{
+  max-width: 1800px;            /* was ~1140px site-wide; wider only on pricing */
+}
+
+@media (min-width: 1200px){
+  .plan-grid--four{
+    grid-template-columns: repeat(4, minmax(300px, 1fr));  /* wider cards */
+    gap: 1.5rem;                                           /* a touch more breathing room */
+  }
+}
+
+/* Prevent awkward word breaks on big titles */
+.plan-title{ word-break: normal; overflow-wrap: anywhere; }
+
+
+
+@media (max-width: 768px){
+  .plan-card .plan-title{ font-size:34px; } /* mobile start size */
+}
+
+/* Featured ribbon: keep vertical clearance (no horizontal padding) */
+@media (min-width: 992px){
+  .plan-card.featured .plan-card__head{ padding-top: 2.2rem; }
+  .plan-card.featured .plan-card__ribbon{
+    position:absolute !important; top:10px; right:12px; pointer-events:none;
+  }
+}
+
+
+
+/* Featured ribbon: vertical clearance only (no right padding that steals width) */
+@media (min-width: 992px){
+  .plan-card.featured .plan-card__head{ padding-top: 2.2rem; }
+  .plan-card.featured .plan-card__ribbon{
+    position: absolute !important;
+    top: 10px; right: 12px; pointer-events: none;
+  }
+}
+
+/* Guard: if you still have any old desktop rule adding padding-right for headers, kill it */
+.plan-card__head{ padding-right: 0 !important; }
+
+@media (min-width: 1200px){
+  .plan-card .plan-title{ font-size: 48px; } /* auto-fit will reduce only if needed */
+}
+
+/* === PRICING TITLES — canonical rules (append at end of styles.css) === */
+.plan-card .plan-card__head{
+  position: relative;
+  text-align: center;
+  padding-right: 0 !important; /* kill any old 'reserve for ribbon' padding */
+}
+
+.plan-card .plan-title{
+  display: inline-block;          /* true centering */
+  white-space: nowrap;            /* one line only */
+  line-height: 1.08;
+  font-weight: 900;
+  letter-spacing: .2px;
+  margin: 0 0 .35rem 0;
+}
+
+
+/* Featured ribbon: vertical clearance so it never overlaps title on desktop */
+@media (min-width: 992px){
+  .plan-card.featured .plan-card__head{ padding-top: 2.2rem; }
+  .plan-card.featured .plan-card__ribbon{
+    position: absolute !important; top: 10px; right: 12px; pointer-events: none;
+  }
+}
+
+/* Give the pricing row a bit more breathing room so the fitter shrinks less */
+.pricing-plans .container.grid-width{
+  max-width: 1800px;              /* you already had this; keep it strong */
+}
+
+/* === PRICING TITLES (final, minimal) === */
+.plan-card .plan-card__head{
+  position: relative;
+  text-align: center;
+  padding-right: 0 !important;   /* ensure no reserved space on the right */
+}
+
+/* Two-line stacked titles, big & bold, centered, with <br> in HTML */
+/* Stacked titles: scale with viewport so long words never overflow on mobile */
+.plan-card .plan-title{
+  margin: 0 0 .4rem 0;
+  line-height: 1.06;
+  font-weight: 900;
+  letter-spacing: .2px;
+  text-align: center;
+  white-space: normal;     /* keep <br> stack */
+  word-break: normal;
+  overflow-wrap: normal;
+
+  /* key change: one clamp covers all sizes */
+  font-size: clamp(24px, 7.2vw, 50px);
+}
+
+/* Featured ribbon stays above the title with only vertical clearance */
+@media (min-width: 992px){
+  .plan-card.featured .plan-card__head{ padding-top: 2.4rem; }
+  .plan-card.featured .plan-card__ribbon{
+    position: absolute !important;
+    top: 10px; right: 12px;
+    pointer-events: none;
+  }
+}
+
+.service-comparison-title {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 900;
+  text-align: center;
+}
+
+/* Mobile comparison cards only */
+.comparison-cards .badge{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1;
+  min-width: 1.5rem;
+}
+
+/* green for yes, red for no */
+.comparison-cards .badge--yes{
+  background: #e6f3ea;   /* light green tint */
+  color: #2f6a43;        /* brand green text */
+}
+
+.comparison-cards .badge--no{
+  background: #fdecef;   /* light red tint */
+  color: #8a1f2a;        /* readable red */
+}
+
+@media (max-width: 480px){
+  .plan-card .plan-card__head{ padding-inline: 8px; }
+  .plan-card .plan-title{ letter-spacing: .1px; }
+}
+
+/* ===== Services: advanced hover (glow + lift + sheen) ===== */
+.services-section { padding: 64px 0; }
+.services-title {
+  text-align: center;
+  margin-bottom: 1.25rem;
+  font-weight: 900;
+  color: var(--deep-green-black);
+}
+
+.service-grid{
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 1024px){ .service-grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px){ .service-grid{ grid-template-columns: 1fr; } }
+
+.service-card{
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  padding: 1.25rem 1.1rem;
+  background: #fff;
+  border: 1.5px solid #e9efe9;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  will-change: transform, box-shadow;
+}
+
+/* Lift + shadow */
+.service-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 18px 42px rgba(0,0,0,0.12);
+  border-color: #d8e7de;
+}
+
+/* Sheen sweep (subtle) */
+.service-card::after{
+  content:"";
+  position:absolute; inset:-120% -60%;
+  background: linear-gradient(110deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.35) 50%, rgba(255,255,255,0) 60%);
+  transform: rotate(8deg) translateX(-30%);
+  transition: transform .6s ease;
+  pointer-events:none;
+}
+.service-card:hover::after{ transform: rotate(8deg) translateX(30%); }
+
+/* Icon glow + micro parallax */
+.service-card__media{
+  display:flex; align-items:center; justify-content:center;
+  height: 92px; margin-bottom: .5rem;
+  filter: drop-shadow(0 0 0 rgba(0,0,0,0));
+  transition: transform .35s ease, filter .35s ease;
+}
+.service-card__media img{
+  max-width: 84px; max-height: 84px; width: auto; height: auto;
+  transition: transform .35s ease;
+}
+.service-card:hover .service-card__media{
+  filter: drop-shadow(0 0 10px rgba(47,106,67,.35));
+  transform: translateY(-2px);
+}
+.service-card:hover .service-card__media img{
+  transform: scale(1.05);
+}
+
+/* Title + copy */
+.service-card__title{
+  text-align:center;
+  font-weight: 900;
+  margin: .25rem 0 .35rem;
+  color: var(--deep-green-black);
+  transition: color .3s ease;
+}
+.service-card__text{
+  text-align: center;
+  color:#35423c;
+  line-height: 1.55;
+  font-size: .98rem;
+}
+
+/* Accent underline on hover */
+.service-card__title::after{
+  content:"";
+  display:block;
+  width: 0;
+  height: 3px;
+  margin: .25rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--sage-green), #9CB292);
+  transition: width .35s ease;
+}
+.service-card:hover .service-card__title::after{ width: 56%; }
+.service-card:hover .service-card__title{ color: var(--sage-green); }
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce){
+  .service-card,
+  .service-card::after,
+  .service-card__media,
+  .service-card__media img{
+    transition: none !important;
+  }
+}
+
+/* ===== Pricing fine print ===== */
+.pricing-fine-print {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #555; /* subtle gray; change to var(--deep-green-black) if you want darker */
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+/* ===== Priority Reporting highlight (CFO & Advisory) ===== */
+.priority-report{
+  position: relative;
+  padding-bottom: .9rem;              /* room for the pulse bar */
+  color: #23372f;                     /* keep normal text color */
+}
+
+.priority-report .priority-note{
+  display: block;
+  margin-top: .25rem;
+  font-size: .78rem;
+  font-style: italic;
+  letter-spacing: .2px;
+  color: #2f6a43;                     /* brand green, subtle */
+  opacity: .95;
+}
+
+/* Neon pulse bar under the line */
+.priority-report::after{
+  content: "";
+  position: absolute;
+  left: 0; right: 3;
+  bottom: .25rem;
+  margin: 0 auto;
+  width: 64%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(46,109,74,.15), rgba(46,109,74,.6), rgba(46,109,74,.15));
+  box-shadow: 0 0 10px rgba(46,109,74,.25), 0 0 18px rgba(46,109,74,.18);
+  animation: pulse-priority 2.8s ease-in-out infinite;
+}
+
+/* Gentle pulse; keep it classy */
+@keyframes pulse-priority{
+  0%, 100% { opacity: .55; transform: scaleX(.98); }
+  50%      { opacity: 1;    transform: scaleX(1.02); }
+}
+
+/* Respect reduced-motion */
+@media (prefers-reduced-motion: reduce){
+  .priority-report::after{ animation: none; }
+}
+
+/* Keep header layout */
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Group both logos side by side on the left */
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* space between logos */
+}
+
+.logo-group img {
+  max-height: 68px; /* keeps them aligned in size */
+  height: auto;
+  width: auto;
 }

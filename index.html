@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- /* =======================================
+   Accounting Subcontractors — v1.0
+   Copyright owned by Devin J. Monsen
+   ======================================= -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Affordable bookkeeping, accounting, controller, CFO, and advisory packages for subcontractors, construction and real estate. Priority reporting and tax planning tailored to construction businesses.">
     <title>Accounting Subcontractors</title>
     <!-- Non-blocking CSS load -->
     <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -16,27 +21,39 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script defer src="script.js"></script>
     <link rel="preload" as="image" href="images/blueprint.webp" imagesrcset="images/blueprint.webp 1x">
+    <link rel="icon" href="/images/acc_sub_logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="/images/acc_sub_logo.png">
+    
   </head>
   <body>
     <header class="site-header">
   <div class="container">
-    <img src="images/acc_sub_Logo.webp" alt="Accounting Subcontractors Logo" class="site-logo" />
+    <!-- Group both logos on the left -->
+    <div class="logo-group">
+      <a href="https://accountingsubs.com/index.html">
+        <img src="images/acc_sub_Logo.webp" alt="Accounting Subcontractors Logo" class="site-logo">
+      </a>
+      <a href="https://mta.cpa">
+        <img src="images/mta.webp" alt="Martin Tax Logo" class="site-logo parent-logo">
+      </a>
+    </div>
+
+    <!-- Navigation with hamburger -->
     <nav class="site-nav">
       <button class="nav-toggle" aria-label="toggle navigation">
         <span class="hamburger"></span>
       </button>
 
-      <!-- NORMALIZED WRAPPER (matches other pages) -->
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="pricing.html">Pricing</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
         <a href="https://martintaxadvisory.clientportal.com/#/login" target="_blank" class="client-portal-btn">
           Client Portal
         </a>
       </div>
-      <!-- /nav-links -->
     </nav>
   </div>
 </header>
@@ -49,46 +66,81 @@
       </div>
     </section>
 
-   <section id="services" class="services">
+   <!-- SERVICES (begin) -->
+<section class="services-section" id="services">
   <div class="container grid-width">
-    <h2 class="fade-in">Our Services</h2>
-    <div class="service-grid fade-in">
-      <div class="service-box">
-        <img src="images/icon_1.webp" alt="Client Accounting Icon" />
-        <h3>Client Accounting Services</h3>
-        <p>Our team works as your internal accounting department, providing you with accurate bookkeeping and timely reporting that drives confident decision-making.</p>
-      </div>
-      <div class="service-box">
-        <img src="images/icon_2.webp" alt="CFO & Advisory Icon" />
-        <h3>CFO & Advisory Services</h3>
-        <p>Get access to strategic support and financial expertise tailored to your business goals. We partner with you to plan and forecast with confidence.</p>
-      </div>
-      <div class="service-box">
-        <img src="images/icon_3.webp" alt="Technology & Integration Icon" />
-        <h3>Payroll Processing</h3>
-        <p>We help make sure your employees get paid the right amount, accurately, and on time.</p>
-      </div>
-      <div class="service-box">
-        <img src="images/icon_4.webp" alt="Tax Services Icon" />
-        <h3>Tax Services</h3>
-        <p>From planning to preparation and filing, we offer comprehensive tax services that keep you compliant while minimizing your tax liability.</p>
-      </div>
-      <div class="service-box">
-        <img src="images/icon_5.webp" alt="Special Projects Icon" />
-        <h3>Project Costing</h3>
-        <p>We will help you know exactly how profitable each project is, your largest expenses and where you can save on future projects.</p>
-      </div>
-      <div class="service-box">
-        <img src="images/icon_6.webp" alt="Startups Icon" />
-        <h3>Startups & Emerging Businesses</h3>
-        <p>We support growth-stage companies with infrastructure setup, financial modeling, and scalable systems designed for long-term success.</p>
-      </div>
-    </div>
-    <div class="pricing-button-wrapper">
-    <a href="pricing.html" class="pricing-button">Pricing</a>
+    <h2 class="services-title">Our Services</h2>
+
+    <div class="service-grid">
+      <!-- Card 1 -->
+      <article class="service-card">
+        <div class="service-card__media">
+          <img src="images/icon_1.webp" alt="Job Costing icon" loading="lazy" decoding="async">
+        </div>
+        <h3 class="service-card__title">Job Costing</h3>
+        <p class="service-card__text">
+          Track labor, materials, subs, and overhead by job so you know where profit is made—and where it leaks.
+        </p>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="service-card">
+        <div class="service-card__media">
+          <img src="images/icon_2.webp" alt="JobTread & QuickBooks Integration icon" loading="lazy" decoding="async">
+        </div>
+        <h3 class="service-card__title">JobTread &amp; QBO Integration</h3>
+        <p class="service-card__text">
+          Clean coding between JobTread and QuickBooks Online so budgets, POs, and invoices roll up into accurate WIP.
+        </p>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="service-card">
+        <div class="service-card__media">
+          <img src="images/icon_3.webp" alt="WIP Reporting icon" loading="lazy" decoding="async">
+        </div>
+        <h3 class="service-card__title">WIP Reporting</h3>
+        <p class="service-card__text">
+          Monthly Work-in-Progress reporting with margin trends, under/over billing, and percent-complete clarity.
+        </p>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="service-card">
+        <div class="service-card__media">
+          <img src="images/icon_4.webp" alt="Controller Oversight icon" loading="lazy" decoding="async">
+        </div>
+        <h3 class="service-card__title">Controller Oversight</h3>
+        <p class="service-card__text">
+          Close on time, tie-out reconciliations, tighten AR/AP cadence, and keep reports tax-ready every month.
+        </p>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="service-card">
+        <div class="service-card__media">
+          <img src="images/icon_5.webp" alt="CFO Advisory icon" loading="lazy" decoding="async">
+        </div>
+        <h3 class="service-card__title">CFO Advisory</h3>
+        <p class="service-card__text">
+          12-week cash flow, KPI dashboards, and leadership cadence—decisions anchored to after-tax cash.
+        </p>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="service-card">
+        <div class="service-card__media">
+          <img src="images/icon_6.webp" alt="Tax Strategy & Filing icon" loading="lazy" decoding="async">
+        </div>
+        <h3 class="service-card__title">Tax Strategy &amp; Filing</h3>
+        <p class="service-card__text">
+          S-Corp & entity planning, timing strategies, year-end returns, and proactive moves throughout the year.
+        </p>
+      </article>
     </div>
   </div>
 </section>
+<!-- SERVICES (end) -->
 
     <section id="about" class="about-section">
   <div class="about-content">
@@ -119,36 +171,36 @@
     </section>
 
     <footer class="site-footer">
-  <div class="footer-content">
-    <div class="footer-left">
-      <p><strong>&copy; 2025 Accounting Subcontractors. All rights reserved.</strong></p>
-      <p>2901 W Bluegrass Blvd, Ste 200, Lehi, Utah 84043, US</p>
-      <p>(435)-465-1040</p>
-    </div>
-    <div class="footer-right">
-  <!-- TikTok -->
-  <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
-    <svg width="52" height="50" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M21 8.5a7.5 7.5 0 01-5.2-2.2v7.4a6.7 6.7 0 11-6.7-6.7c.4 0 .8 0 1.2.1v3.2a3.4 3.4 0 00-1.2-.2 3.5 3.5 0 103.5 3.5V2.5h3.1a7.5 7.5 0 004.3 4.1v1.9z"/>
-    </svg>
-  </a>
-  <!-- Facebook -->
-  <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
-    <svg width="52" height="52" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M13 22v-8h3l.5-3H13V9.3c0-.9.3-1.5 1.7-1.5H17V5.1A21 21 0 0014.6 5C12 5 10.2 6.6 10.2 9v2H7.5v3h2.7v8h2.8z"/>
-    </svg>
-  </a>
-  <!-- LinkedIn -->
-  <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
-    <svg width="52" height="52" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M6.94 8.9H3.75V20h3.19V8.9zM5.35 7.5A1.85 1.85 0 115.34 4 1.85 1.85 0 015.35 7.5zM20.25 20h-3.18v-5.8c0-1.38-.5-2.33-1.75-2.33-.95 0-1.52.64-1.77 1.26-.09.22-.11.53-.11.84V20h-3.18s.04-9.9 0-11h3.18v1.56c.42-.65 1.17-1.57 2.85-1.57 2.08 0 3.66 1.36 3.66 4.28V20z"/>
-    </svg>
-  </a>
-  </div>
-  <div class="footer-links">
-  <a href="faq.html" class="footer-btn">FAQ</a>
-  </div>
-  </div>
-</footer>
+      <div class="footer-content">
+        <div class="footer-left">
+          <p><strong>&copy; 2025 Accounting Subcontractors. All rights reserved.</strong></p>
+          <p>2901 W Bluegrass Blvd, Ste 200, Lehi, Utah 84043, US</p>
+          <p>(435)-465-1040</p>
+        </div>
+        <div class="footer-right">
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+        <svg width="52" height="50" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M21 8.5a7.5 7.5 0 01-5.2-2.2v7.4a6.7 6.7 0 11-6.7-6.7c.4 0 .8 0 1.2.1v3.2a3.4 3.4 0 00-1.2-.2 3.5 3.5 0 103.5 3.5V2.5h3.1a7.5 7.5 0 004.3 4.1v1.9z"/>
+        </svg>
+      </a>
+      <!-- Facebook -->
+      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M13 22v-8h3l.5-3H13V9.3c0-.9.3-1.5 1.7-1.5H17V5.1A21 21 0 0014.6 5C12 5 10.2 6.6 10.2 9v2H7.5v3h2.7v8h2.8z"/>
+        </svg>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M6.94 8.9H3.75V20h3.19V8.9zM5.35 7.5A1.85 1.85 0 115.34 4 1.85 1.85 0 015.35 7.5zM20.25 20h-3.18v-5.8c0-1.38-.5-2.33-1.75-2.33-.95 0-1.52.64-1.77 1.26-.09.22-.11.53-.11.84V20h-3.18s.04-9.9 0-11h3.18v1.56c.42-.65 1.17-1.57 2.85-1.57 2.08 0 3.66 1.36 3.66 4.28V20z"/>
+        </svg>
+      </a>
+      </div>
+      <div class="footer-links">
+      <a href="faq.html" class="footer-btn">FAQ</a>
+      </div>
+      </div>
+    </footer>
   </body>
 </html>
