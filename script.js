@@ -1,3 +1,22 @@
+// Lazy-load GSAP only if we actually animate
+(async () => {
+  if (!document.querySelector('.fade-in')) return;
+  if (!window.gsap) {
+    await new Promise(r => {
+      const s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js';
+      s.onload = r; document.head.appendChild(s);
+    });
+  }
+  if (!window.ScrollTrigger) {
+    await new Promise(r => {
+      const s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js';
+      s.onload = r; document.head.appendChild(s);
+    });
+  }
+})();
+
 /* ===== Fade-ins on scroll (GSAP + ScrollTrigger) ===== */
 window.addEventListener("DOMContentLoaded", () => {
   if (window.gsap && window.ScrollTrigger) {

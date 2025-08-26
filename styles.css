@@ -1128,3 +1128,7 @@ body.about-page, body.contact-page{padding-top:0 !important}
   height: auto;
   width: auto;
 }
+
+@media (hover:hover){
+  .comparison-table tbody tr { will-change: background-color; } /* micro-optimization */
+}
