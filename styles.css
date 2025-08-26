@@ -1056,7 +1056,7 @@ body.about-page, body.contact-page{padding-top:0 !important}
 /* ===== Pricing fine print ===== */
 .pricing-fine-print {
   margin-top: 1.5rem;
-  font-size: 0.9rem;
+  font-size: 1.9rem;
   font-style: italic;
   color: #555; /* subtle gray; change to var(--deep-green-black) if you want darker */
   text-align: center;
