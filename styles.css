@@ -1132,3 +1132,5 @@ body.about-page, body.contact-page{padding-top:0 !important}
 @media (hover:hover){
   .comparison-table tbody tr { will-change: background-color; } /* micro-optimization */
 }
+
+.fade-in { opacity: 0; transform: translateY(24px); }

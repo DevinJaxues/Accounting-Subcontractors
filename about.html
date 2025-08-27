@@ -7,17 +7,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Affordable bookkeeping, accounting, controller, CFO, and advisory packages for subcontractors, construction and real estate. Priority reporting and tax planning tailored to construction businesses.">
+  <meta name="description" content="Affordable bookkeeper, accountant, CPA, CFO, and advisor for subcontractors, construction and real estate with payroll, taxes, job costing and reporting." />
   <title>About Us | Accounting Subcontractors</title>
   <!-- Non-blocking CSS -->
   <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="styles.css"></noscript>
   <link rel="preload" as="image" href="images/about-background.webp" fetchpriority="high">
+  <!-- replace the current Montserrat link in about.html head -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+  <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+  </noscript>
   <script defer src="script.js"></script>
   <style>
     .about-hero {
@@ -218,10 +220,10 @@
         <a href="https://martintaxadvisory.clientportal.com/#/login" target="_blank" class="client-portal-btn">
           Client Portal
         </a>
-      </div>
-    </nav>
-  </div>
-</header>
+       </div>
+      </nav>
+    </div>
+  </header>
 
   <section class="about-hero fade-in">
     <h1>Meet the Team Behind the Numbers</h1>
@@ -232,7 +234,7 @@
   <section class="about-section team-bio-section">
   <div class="about-content fade-in">
     <div class="about-image">
-      <img src="images/about-background.webp" alt="Company History Image" loading="lazy" />
+      <img src="images/about-background.webp" alt="Company History Image" width="1200" height="800" loading="lazy" decoding="async" />
     </div>
     <div class="about-box fade-in">
       <blockquote>
@@ -248,28 +250,52 @@
     <h2>Our People</h2>
     <div class="team-grid">
       <div class="profile">
-        <img src="images/brodie.webp" alt="Employee 1" loading="lazy">
+        <img
+        src="images/brodie-416.webp"
+        srcset="images/brodie-416.webp 416w, images/brodie-832.webp 832w"
+        sizes="(max-width: 640px) 88vw, (max-width: 1200px) 33vw, 280px"
+        alt="Brodie Martin"
+        width="416" height="416"
+        loading="lazy" decoding="async" />
         <div class="profile-content">
           <h3>Brodie Martin</h3>
         </div>
       </div>
 
       <div class="profile">
-        <img src="images/brock.webp" alt="Employee 2" loading="lazy">
+        <img
+        src="images/brock-416.webp"
+        srcset="images/brock-416.webp 416w, images/brock-832.webp 832w"
+        sizes="(max-width: 640px) 88vw, (max-width: 1200px) 33vw, 280px"
+        alt="Brock Jones"
+        width="416" height="416"
+        loading="lazy" decoding="async" />
         <div class="profile-content">
           <h3>Brock Jones</h3>
         </div>
       </div>
 
       <div class="profile">
-        <img src="images/brady.webp" alt="Employee 4" loading="lazy">
+        <img
+        src="images/brady-416.webp"
+        srcset="images/brady-416.webp 416w, images/brady-832.webp 832w"
+        sizes="(max-width: 640px) 88vw, (max-width: 1200px) 33vw, 280px"
+        alt="Brady Martin"
+        width="416" height="416"
+        loading="lazy" decoding="async" />
         <div class="profile-content">
           <h3>Brady Martin</h3>
         </div>
       </div>
 
       <div class="profile">
-        <img src="images/devin.webp" alt="Employee 3" loading="lazy">
+        <img
+        src="images/devin-416.webp"
+        srcset="images/devin-416.webp 416w, images/devin-832.webp 832w"
+        sizes="(max-width: 640px) 88vw, (max-width: 1200px) 33vw, 280px"
+        alt="Devin Monsen"
+        width="416" height="416"
+        loading="lazy" decoding="async" />
         <div class="profile-content">
           <h3>Devin Monsen</h3>
         </div>

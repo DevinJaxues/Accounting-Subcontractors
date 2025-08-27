@@ -17,26 +17,29 @@
   }
 })();
 
-/* ===== Fade-ins on scroll (GSAP + ScrollTrigger) ===== */
-window.addEventListener("DOMContentLoaded", () => {
-  if (window.gsap && window.ScrollTrigger) {
-    gsap.utils.toArray(".fade-in").forEach((el, i) => {
-      // Skip anything inside the sticky header (nav, logo, drawer, etc.)
-      if (el.closest(".site-header")) return;
-
-      gsap.fromTo(
-        el,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1, y: 0, duration: 1, ease: "power2.out", delay: i * 0.02,
-          scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none none", once: true }
-        }
-      );
-    });
+/* ===== Fade-ins on scroll (IntersectionObserver – no layout thrash) ===== */
+(function() {
+  const els = document.querySelectorAll('.fade-in');
+  if (!('IntersectionObserver' in window) || !els.length) {
+    // fallback
+    return els.forEach(el => el.style.opacity = 1);
   }
-});
 
-/* ===== Sticky header background + body offset (debounced & resize-observed) ===== */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.style.transition = 'transform .6s ease, opacity .6s ease';
+        e.target.style.transform = 'translateY(0)';
+        e.target.style.opacity = '1';
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '60px' });
+
+  els.forEach(el => io.observe(el));
+})();
+
+/* ===== Sticky header background + body offset (resize-observed) ===== */
 (() => {
   const header = document.querySelector(".site-header");
   if (!header) return;
@@ -51,21 +54,18 @@ window.addEventListener("DOMContentLoaded", () => {
     else header.classList.remove("scrolled");
   };
 
-  // Run on load
   window.addEventListener("load", () => { setOffset(); onScroll(); });
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  // Only react when the header’s size actually changes
   if ("ResizeObserver" in window) {
     const ro = new ResizeObserver(setOffset);
     ro.observe(header);
   } else {
-    // last-ditch fallback for very old browsers
     window.addEventListener("resize", setOffset);
   }
 })();
 
-/* ===== Mobile nav drawer (single source of truth) ===== */
+/* ===== Mobile nav drawer ===== */
 (() => {
   const navToggle = document.querySelector(".nav-toggle");
   const navLinks  = document.querySelector(".nav-links");
@@ -99,8 +99,8 @@ window.addEventListener("DOMContentLoaded", () => {
   if (!buttons.length) return;
 
   const prices = {
-    bronze: { monthly: "$49", yearly: "$499" },
-    silver: { monthly: "$99", yearly: "$999" },
+    bronze: { monthly: "$49",  yearly: "$499"  },
+    silver: { monthly: "$99",  yearly: "$999"  },
     gold:   { monthly: "$199", yearly: "$1999" }
   };
 
@@ -216,7 +216,6 @@ window.addEventListener("DOMContentLoaded", () => {
     addonEl.textContent = `$${total.toLocaleString()}`;
   });
 
-  // little nudge on hover for featured
   document.querySelectorAll(".plan-card.featured").forEach(card => {
     card.addEventListener("mouseenter", () => card.classList.add("is-hot"));
     card.addEventListener("mouseleave", () => card.classList.remove("is-hot"));
@@ -235,7 +234,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const titles = headCells.map(th => th.textContent.trim());
   const FEATURE_COL = 0; // keep "Feature" first
 
-  // Build target order indices: [Feature, ACS, DIY, Bookkeepers, (any others left as-is)]
   const order = [FEATURE_COL];
   desiredOrder.forEach(name => {
     const idx = titles.findIndex(t => t.toLowerCase() === name.toLowerCase());
@@ -245,13 +243,11 @@ window.addEventListener("DOMContentLoaded", () => {
     if (!order.includes(i)) order.push(i);
   }
 
-  // Rebuild header in new order
   const newHead = document.createDocumentFragment();
   order.forEach(i => newHead.appendChild(headCells[i]));
   headRow.innerHTML = "";
   headRow.appendChild(newHead);
 
-  // Rebuild every body row in the same order
   Array.from(TABLE.tBodies).forEach(tbody => {
     Array.from(tbody.rows).forEach(tr => {
       const tds = Array.from(tr.cells);
@@ -300,9 +296,8 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 })();
 
-/* Footer year (reuse) */
+/* ===== Footer year ===== */
 (() => {
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 })();
-
