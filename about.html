@@ -50,17 +50,32 @@
       overflow: hidden;
     }
 
-    .team-bio-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 1000px;
-      height: 100%;
-      background: url('images/about-background.webp') no-repeat center center;
-      background-size: contain;
-      z-index: -2;
+    /* About: background layer (desktop + mobile baseline) */
+    .team-bio-section::before{
+      content:'';
+      position:absolute;
+      inset:0;                         /* fill the section */
+      background:url('images/about-background.webp') no-repeat center center;
+      background-size:cover;           /* keep aspect ratio; crop edges as needed */
+      background-attachment:scroll;    /* avoid iOS Safari stretch bug */
+      filter:blur(14px);
+      transform:scale(1.10);           /* bleed blur beyond edges */
+      z-index:-2;
+    }
+
+    /* About: tighten section height on small screens so it doesn’t feel “over-tall” */
+    @media (max-width: 768px){
+      .team-bio-section{
+        position:relative;
+        overflow:hidden;
+        padding:40px 20px;             /* a bit less vertical padding on phones */
+        min-height:440px;              /* stable height; prevents the “tall look” */
+      }
+      .team-bio-section::before{
+        background-position:center center !important;  /* lock the focal point */
+        background-size:cover !important;
+        transform:scale(1.12);                          /* tiny extra bleed */
+      }
     }
 
     .team-bio-section::after {

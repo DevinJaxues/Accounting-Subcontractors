@@ -1134,3 +1134,57 @@ body.about-page, body.contact-page{padding-top:0 !important}
 }
 
 .fade-in { opacity: 0; transform: translateY(24px); }
+
+@media (max-width: 991.98px){
+  .team-bio-section{ position: relative; overflow: hidden; }
+  .team-bio-section::before{
+    inset: 0 !important;
+    background-position: center center !important;
+    background-size: cover !important;      /* preserve aspect; crop edges */
+    background-attachment: scroll !important;
+    transform: scale(1.10) !important;      /* bleed the blur to avoid seams */
+    filter: blur(14px) !important;
+  }
+}
+
+/* === ABOUT (mobile): prevent tall/stretchy foreground image === */
+@media (max-width: 768px){
+  /* Create a fixed-ratio box for the image */
+  .about-section .about-image{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;   /* adjust to taste: 16/9, 3/2, etc. */
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  /* Make the <img> fill the box and crop instead of stretch */
+  .about-section .about-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* keep proportions; crop edges */
+    object-position: center;
+    display: block;
+  }
+}
+
+/* About page: stack and center the about-box under the photo */
+@media (min-width: 992px){
+  .about-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* centers the contents horizontally */
+  }
+
+  .about-section .about-image{
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .about-section .about-box{
+    position: static;      /* remove absolute positioning */
+    margin-top: 20px;      /* spacing below the image */
+    max-width: 1100px;      /* keeps it narrower than the photo */
+    text-align: center;    /* optional: center the text inside */
+  }
+}
