@@ -1188,3 +1188,70 @@ body.about-page, body.contact-page{padding-top:0 !important}
     text-align: center;    /* optional: center the text inside */
   }
 }
+
+/* === Header Logo Hover Effect (MTA grayscale → color) === */
+
+/* Base: desaturate the MTA logo */
+.logo-group .parent-logo {
+  filter: grayscale(100%) brightness(0.9);
+  opacity: 0.85;
+  transition: filter 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
+  cursor: pointer;
+}
+
+/* Hover: restore full color */
+.logo-group .parent-logo:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+/* Optional micro-bounce when you hover both logos together */
+.logo-group a:hover img.site-logo {
+  transform: scale(1.03);
+}
+
+/* === About Page Specific Layout Fix === */
+.about-section.about-page .about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-section.about-page .about-box {
+  position: static;
+  transform: none;
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  max-width: 900px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.about-section.about-page .team-bio-section {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+/* === About Page Background Restore === */
+.about-section.about-page {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section.about-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("images/about-background.webp") center/cover no-repeat;
+  filter: blur(12px) brightness(0.8);
+  z-index: 0;
+}
+
+.about-section.about-page .about-content {
+  position: relative;
+  z-index: 1; /* ensures content appears above the background */
+}
