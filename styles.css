@@ -1255,3 +1255,16 @@ body.about-page, body.contact-page{padding-top:0 !important}
   position: relative;
   z-index: 1; /* ensures content appears above the background */
 }
+
+.error-404 {
+  text-align: center;
+  padding: 100px 20px;
+}
+.error-404 h1 {
+  font-size: clamp(40px, 6vw, 72px);
+  color: var(--brand-red);
+}
+.error-404 p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
